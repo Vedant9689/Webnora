@@ -1,0 +1,22 @@
+# Dependency directories
+node_modules/
+.pnp
+.pnp.js
+
+# Testing and builds
+dist/
+build/
+.cache/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Logs and environment
+*.log
+.env
+.env.local
+
+# IDE configuration
+.vscode/
+.idea/

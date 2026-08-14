@@ -1,0 +1,19 @@
+{
+  "name": "vb-portfolio",
+  "version": "1.0.0",
+  "description": "Freelance Web Developer Portfolio for VB (Vedant) - Pune, Maharashtra",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y serve . -l 3000",
+    "dev": "npx -y serve . -l 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "freelance-developer",
+    "web-development",
+    "pune",
+    "vedant"
+  ],
+  "author": "Vedant (VB) <contacttovedant5@gmail.com>",
+  "license": "MIT"
+}
