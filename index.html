@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,24 +30,15 @@
   <!-- Toast Notification Container -->
   <div id="toast-container" class="toast-container" aria-live="polite"></div>
 
-  <!-- Announcement / Availability Bar -->
-  <div class="top-announcement">
-    <div class="container top-announcement-inner">
-      <span class="pulse-indicator"></span>
-      <span class="announcement-text"><strong>Available for New Projects:</strong> Q3 / Q4 2026 • Pune & Global Clients</span>
-      <a href="mailto:contacttovedant5@gmail.com?subject=New%20Website%20Project%20Inquiry" class="announcement-link">
-        <i class="fas fa-paper-plane"></i> Quick Email
-      </a>
-    </div>
-  </div>
+
 
   <!-- Main Header & Navigation -->
   <header class="site-header" id="navbar">
     <div class="container header-inner">
       <!-- Brand Logo -->
       <a href="#hero" class="brand-logo" aria-label="VB Portfolio Home">
-        <div class="logo-box">
-          <span class="logo-accent">VB</span>
+        <div class="logo-photo-wrap">
+          <img src="assets/vedant-logo.jpg" alt="Vedant" class="logo-photo" />
         </div>
         <div class="logo-meta">
           <span class="logo-name">Vedant</span>
@@ -77,7 +68,7 @@
         </button>
 
         <!-- Direct Email CTA -->
-        <a href="#contact" class="btn btn-emerald btn-sm header-cta">
+        <a href="mailto:contacttovedant5@gmail.com?subject=Freelance%20Web%20Design%20Inquiry%20for%20Vedant" class="btn btn-emerald btn-sm header-cta">
           <i class="fas fa-envelope"></i>
           <span>Get in Touch</span>
         </a>
@@ -98,7 +89,9 @@
     <div class="drawer-content">
       <div class="drawer-header">
         <div class="brand-logo">
-          <div class="logo-box"><span class="logo-accent">VB</span></div>
+          <div class="logo-photo-wrap">
+            <img src="assets/vedant-logo.jpg" alt="Vedant" class="logo-photo" />
+          </div>
           <div class="logo-meta">
             <span class="logo-name">Vedant</span>
             <span class="logo-tagline">Pune, Maharashtra</span>
@@ -136,9 +129,13 @@
   <main>
     <!-- HERO SECTION -->
     <section class="hero-section" id="hero">
-      <div class="hero-glow-bg hero-glow-1"></div>
-      <div class="hero-glow-bg hero-glow-2"></div>
-      
+      <!-- Background Video -->
+      <video class="hero-bg-video" autoplay muted loop playsinline preload="auto">
+        <source src="assets/bg-video.mp4" type="video/mp4">
+      </video>
+      <!-- Dark overlay so text remains readable -->
+      <div class="hero-video-overlay"></div>
+
       <div class="container hero-container">
         <div class="hero-content">
           <!-- Availability Badge -->
@@ -212,9 +209,9 @@
           </div>
         </div>
 
-        <!-- Hero Visual / Code Card Graphic -->
+        <!-- Hero Visual / Video Showcase -->
         <div class="hero-visual">
-          <div class="developer-card glass-card">
+          <div class="developer-card glass-card hero-video-card">
             <div class="dev-card-header">
               <div class="window-controls">
                 <span class="dot dot-red"></span>
@@ -222,25 +219,16 @@
                 <span class="dot dot-green"></span>
               </div>
               <div class="dev-card-title">
-                <i class="fas fa-code"></i> vedant_dev_profile.ts
+                <i class="fas fa-play-circle"></i> vedant_portfolio_showcase.mp4
               </div>
-              <span class="dev-status">● Available</span>
+              <span class="dev-status">● Live Demo</span>
             </div>
             
-            <div class="dev-code-body">
-              <pre><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
-  <span class="code-prop">name</span>: <span class="code-str">"Vedant (VB)"</span>,
-  <span class="code-prop">role</span>: <span class="code-str">"Freelance Full-Stack Developer"</span>,
-  <span class="code-prop">location</span>: <span class="code-str">"Pune, Maharashtra, India"</span>,
-  <span class="code-prop">email</span>: <span class="code-str">"contacttovedant5@gmail.com"</span>,
-  <span class="code-prop">specialization</span>: [
-    <span class="code-str">"Landing Pages That Sell"</span>,
-    <span class="code-str">"Custom E-Commerce & SaaS"</span>,
-    <span class="code-str">"Ultra-Fast UI/UX & SEO"</span>
-  ],
-  <span class="code-prop">readyToBuild</span>: <span class="code-bool">true</span>,
-  <span class="code-prop">deliverValue</span>: () => <span class="code-str">"100% Client Satisfaction"</span>
-};</code></pre>
+            <div class="dev-video-body">
+              <video class="showcase-video" autoplay muted loop playsinline controls preload="auto">
+                <source src="assets/hero-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
 
             <div class="dev-card-footer">
@@ -457,34 +445,34 @@
 
             <div class="package-body">
               <div class="package-timeline">
-                <i class="fas fa-bolt"></i> Delivered in <strong>3 - 5 Days</strong>
+                <i class="fas fa-bolt"></i> Delivered in <strong>2 - 4 Days</strong>
               </div>
               <ul class="package-list">
                 <li><i class="fas fa-check text-emerald"></i> 1 High-Converting Single Page</li>
                 <li><i class="fas fa-check text-emerald"></i> 100% Mobile & Tablet Responsive</li>
                 <li><i class="fas fa-check text-emerald"></i> Lead Capture & Contact Form Integration</li>
-                <li><i class="fas fa-check text-emerald"></i> Instant Email Notifications on Inquiry</li>
+                <li><i class="fas fa-check text-emerald"></i> Instant Email Inquiries to Vedant</li>
                 <li><i class="fas fa-check text-emerald"></i> Basic On-Page SEO & Meta Tags</li>
                 <li><i class="fas fa-check text-emerald"></i> Superfast Loading (&lt; 1 sec)</li>
                 <li><i class="fas fa-check text-emerald"></i> Free Domain/Hosting Setup Help</li>
-                <li><i class="fas fa-check text-emerald"></i> 14 Days Post-Launch Support</li>
+                <li><i class="fas fa-check text-emerald"></i> 14 Days Free Post-Launch Support</li>
               </ul>
             </div>
 
             <div class="package-footer">
-              <a href="#contact" class="btn btn-outline btn-block package-cta" data-package="Launch Landing Page">
-                <i class="fas fa-paper-plane"></i> Book Starter Package
+              <a href="mailto:contacttovedant5@gmail.com?subject=Booking%20Inquiry%20for%20Launch%20Landing%20Page%20(₹2,999)&body=Hi%20Vedant,%0A%0AI%20would%20like%20to%20book%20the%20Launch%20Landing%20Page%20package%20(₹2,999).%0A%0APlease%20let%20me%20know%20the%20kickoff%20steps." class="btn btn-outline btn-block package-cta" data-package="Launch Landing Page">
+                <i class="fas fa-paper-plane"></i> Book Starter (₹2,999)
               </a>
             </div>
           </div>
 
           <!-- Package 2: Business Growth (Featured) -->
           <div class="package-card glass-card popular-package">
-            <div class="popular-ribbon">⭐ Most Popular</div>
+            <div class="popular-ribbon">⭐ Most Popular (Best Value)</div>
             <div class="package-header">
               <div class="package-badge popular-badge">Business Growth</div>
               <h3 class="package-name">Complete Business Website</h3>
-              <p class="package-for">Best for established businesses, agencies, clinics, and startups looking to dominate search and win high-ticket clients.</p>
+              <p class="package-for">Best for small businesses, startups, clinics, and service providers wanting a modern multi-page presence.</p>
               <div class="package-price">
                 <span class="currency-symbol">₹</span>
                 <span class="price-val" data-inr="21,999" data-usd="399">21,999</span>
@@ -494,11 +482,11 @@
 
             <div class="package-body">
               <div class="package-timeline highlight-timeline">
-                <i class="fas fa-rocket"></i> Delivered in <strong>7 - 10 Days</strong>
+                <i class="fas fa-rocket"></i> Delivered in <strong>5 - 7 Days</strong>
               </div>
               <ul class="package-list">
-                <li><i class="fas fa-check text-emerald"></i> Up to <strong>5 - 8 Custom Designed Pages</strong></li>
-                <li><i class="fas fa-check text-emerald"></i> Bespoke Modern UI/UX (Zero generic templates)</li>
+                <li><i class="fas fa-check text-emerald"></i> Up to <strong>5 - 7 Custom Designed Pages</strong></li>
+                <li><i class="fas fa-check text-emerald"></i> Bespoke Modern UI/UX (Clean White & Purple)</li>
                 <li><i class="fas fa-check text-emerald"></i> Comprehensive Technical On-Page SEO</li>
                 <li><i class="fas fa-check text-emerald"></i> Easy CMS to edit content/blogs</li>
                 <li><i class="fas fa-check text-emerald"></i> Interactive Lead Forms & Quotation Tool</li>
@@ -509,8 +497,8 @@
             </div>
 
             <div class="package-footer">
-              <a href="#contact" class="btn btn-emerald btn-block package-cta" data-package="Complete Business Website">
-                <i class="fas fa-paper-plane"></i> Book Business Package
+              <a href="mailto:contacttovedant5@gmail.com?subject=Booking%20Inquiry%20for%20Complete%20Business%20Website%20(₹6,999)&body=Hi%20Vedant,%0A%0AI%20would%20like%20to%20book%20the%20Complete%20Business%20Website%20package%20(₹6,999).%0A%0APlease%20let%20me%20know%20the%20kickoff%20steps." class="btn btn-emerald btn-block package-cta" data-package="Complete Business Website">
+                <i class="fas fa-paper-plane"></i> Book Business (₹6,999)
               </a>
             </div>
           </div>
@@ -518,9 +506,9 @@
           <!-- Package 3: Custom E-Commerce & Full-Stack -->
           <div class="package-card glass-card">
             <div class="package-header">
-              <div class="package-badge">Premium</div>
-              <h3 class="package-name">E-Commerce & Custom App</h3>
-              <p class="package-for">Best for brands selling products, SaaS platforms, or custom client portals.</p>
+              <div class="package-badge">Online Store</div>
+              <h3 class="package-name">E-Commerce & Online Store</h3>
+              <p class="package-for">Best for selling products online with seamless payments and order alerts.</p>
               <div class="package-price">
                 <span class="currency-symbol">₹</span>
                 <span class="price-val" data-inr="39,999" data-usd="699">39,999</span>
@@ -530,14 +518,13 @@
 
             <div class="package-body">
               <div class="package-timeline">
-                <i class="fas fa-code-branch"></i> Delivered in <strong>2 - 3 Weeks</strong>
+                <i class="fas fa-code-branch"></i> Delivered in <strong>1 - 2 Weeks</strong>
               </div>
               <ul class="package-list">
                 <li><i class="fas fa-check text-emerald"></i> Full Online Store or Dynamic Web App</li>
                 <li><i class="fas fa-check text-emerald"></i> Razorpay / Stripe / UPI / COD Payment Gateway</li>
                 <li><i class="fas fa-check text-emerald"></i> Product Management & Inventory Dashboard</li>
-                <li><i class="fas fa-check text-emerald"></i> User Authentication & Customer Accounts</li>
-                <li><i class="fas fa-check text-emerald"></i> Automated Email Order Invoices & Alerts</li>
+                <li><i class="fas fa-check text-emerald"></i> User Accounts & Automated Invoices</li>
                 <li><i class="fas fa-check text-emerald"></i> High Security & SSL Configuration</li>
                 <li><i class="fas fa-check text-emerald"></i> Custom Dynamic Filters & Search</li>
                 <li><i class="fas fa-check text-emerald"></i> <strong>45 Days Free Priority Support</strong></li>
@@ -545,8 +532,8 @@
             </div>
 
             <div class="package-footer">
-              <a href="#contact" class="btn btn-outline btn-block package-cta" data-package="E-Commerce & Custom App">
-                <i class="fas fa-paper-plane"></i> Book E-Commerce Package
+              <a href="mailto:contacttovedant5@gmail.com?subject=Booking%20Inquiry%20for%20E-Commerce%20Store%20(₹12,999)&body=Hi%20Vedant,%0A%0AI%20would%20like%20to%20book%20the%20E-Commerce%20Store%20package%20(₹12,999).%0A%0APlease%20let%20me%20know%20the%20kickoff%20steps." class="btn btn-outline btn-block package-cta" data-package="E-Commerce & Online Store">
+                <i class="fas fa-paper-plane"></i> Book Store (₹12,999)
               </a>
             </div>
           </div>
@@ -554,7 +541,7 @@
           <!-- Package 4: Maintenance Retainer -->
           <div class="package-card glass-card retainer-card">
             <div class="package-header">
-              <div class="package-badge">Retainer</div>
+              <div class="package-badge">Monthly Care</div>
               <h3 class="package-name">Website Care & Growth</h3>
               <p class="package-for">Keep your website fast, secure, up-to-date, and error-free every month.</p>
               <div class="package-price">
@@ -578,8 +565,8 @@
             </div>
 
             <div class="package-footer">
-              <a href="#contact" class="btn btn-outline btn-block package-cta" data-package="Website Care Retainer">
-                <i class="fas fa-sync-alt"></i> Get Monthly Care
+              <a href="mailto:contacttovedant5@gmail.com?subject=Inquiry%20for%20Website%20Care%20Retainer%20(₹1,499/mo)&body=Hi%20Vedant,%0A%0AI%20would%20like%20to%20subscribe%20to%20the%20Monthly%20Website%20Care%20Retainer%20(₹1,499/mo).%0A%0APlease%20let%20me%20know%20the%20kickoff%20steps." class="btn btn-outline btn-block package-cta" data-package="Website Care Retainer">
+                <i class="fas fa-sync-alt"></i> Get Monthly Care (₹1,499/mo)
               </a>
             </div>
           </div>
@@ -591,7 +578,7 @@
             <h4>Need a Custom Feature or Specific Tech Stack?</h4>
             <p>I build bespoke architectures (Next.js, Node.js, Custom APIs, SaaS MVPs). Let’s customize a plan specifically for your requirements.</p>
           </div>
-          <a href="#contact" class="btn btn-emerald">
+          <a href="#contact" class="btn btn-emerald package-cta" data-package="Custom Affordable Scope">
             <i class="fas fa-paper-plane"></i> Discuss Custom Scope
           </a>
         </div>
@@ -629,7 +616,7 @@
                     <input type="radio" name="project_type" value="business" data-base-inr="18999" data-base-usd="349">
                     <div class="radio-content">
                       <span class="option-title">Business Website</span>
-                      <span class="option-sub">Multi-page corporate site</span>
+                      <span class="option-sub">Multi-page business site</span>
                     </div>
                   </label>
                   <label class="estimator-radio-card">
@@ -643,7 +630,7 @@
                     <input type="radio" name="project_type" value="custom_app" data-base-inr="44999" data-base-usd="799">
                     <div class="radio-content">
                       <span class="option-title">Custom Web App</span>
-                      <span class="option-sub">SaaS, dashboards & APIs</span>
+                      <span class="option-sub">SaaS, portals & APIs</span>
                     </div>
                   </label>
                 </div>
@@ -675,7 +662,7 @@
                       <span class="addon-name">Advanced Technical SEO</span>
                       <span class="addon-desc">Schema markup, sitemaps, Google indexing</span>
                     </div>
-                    <span class="addon-badge">+₹3.5k</span>
+                    <span class="addon-badge">+₹799</span>
                   </label>
 
                   <label class="addon-checkbox-card">
@@ -683,9 +670,9 @@
                     <div class="checkbox-custom"></div>
                     <div class="addon-info">
                       <span class="addon-name">Payment Gateway Integration</span>
-                      <span class="addon-desc">Razorpay / Stripe / UPI / PayPal</span>
+                      <span class="addon-desc">Razorpay / Stripe / UPI / QR</span>
                     </div>
-                    <span class="addon-badge">+₹4.5k</span>
+                    <span class="addon-badge">+₹999</span>
                   </label>
 
                   <label class="addon-checkbox-card">
@@ -695,17 +682,17 @@
                       <span class="addon-name">Admin CMS / Blog Manager</span>
                       <span class="addon-desc">Easily write blogs and edit content</span>
                     </div>
-                    <span class="addon-badge">+₹5.0k</span>
+                    <span class="addon-badge">+₹1.2k</span>
                   </label>
 
                   <label class="addon-checkbox-card">
                     <input type="checkbox" name="addon" value="speed_opt" data-inr="2500" data-usd="45" checked>
                     <div class="checkbox-custom"></div>
                     <div class="addon-info">
-                      <span class="addon-name">Hyper Performance & CDN</span>
+                      <span class="addon-name">Hyper Performance & Speed</span>
                       <span class="addon-desc">Sub-second load times & 95+ PageSpeed</span>
                     </div>
-                    <span class="addon-badge">+₹2.5k</span>
+                    <span class="addon-badge">+₹599</span>
                   </label>
 
                   <label class="addon-checkbox-card">
@@ -715,7 +702,7 @@
                       <span class="addon-name">Bespoke Micro-Animations</span>
                       <span class="addon-desc">Interactive smooth scroll & micro-effects</span>
                     </div>
-                    <span class="addon-badge">+₹3.0k</span>
+                    <span class="addon-badge">+₹699</span>
                   </label>
                 </div>
               </div>
@@ -806,189 +793,107 @@
       <div class="container">
         <div class="section-header text-center">
           <span class="section-subtitle">Proof of Work</span>
-          <h2 class="section-title">Featured Projects & Case Studies</h2>
+          <h2 class="section-title">Featured Projects</h2>
           <p class="section-desc">
-            Explore a curated selection of websites and web applications built to achieve tangible business results: higher traffic, faster speeds, and stellar conversion rates.
+            Real projects, real results. Explore live websites and web apps built by Vedant — each crafted for performance, design, and conversions.
           </p>
-
-          <!-- Portfolio Filter Tabs -->
-          <div class="portfolio-filter-tabs">
-            <button class="filter-tab active" data-filter="all">All Projects</button>
-            <button class="filter-tab" data-filter="landing">Landing Pages</button>
-            <button class="filter-tab" data-filter="business">Business Sites</button>
-            <button class="filter-tab" data-filter="ecommerce">E-Commerce</button>
-            <button class="filter-tab" data-filter="webapp">Web Apps</button>
-          </div>
         </div>
 
-        <div class="portfolio-grid" id="portfolio-grid">
-          <!-- Project 1 -->
-          <div class="project-card glass-card" data-category="landing">
+        <div class="portfolio-grid real-projects-grid" id="portfolio-grid">
+
+          <!-- Project 1: ShopSphere -->
+          <div class="project-card glass-card real-project-card">
             <div class="project-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80" alt="Apex SaaS Landing Page" class="project-img" loading="lazy">
+              <img src="assets/shopsphere.png" alt="ShopSphere E-Commerce UI" class="project-img" loading="lazy">
               <div class="project-overlay">
-                <button class="btn btn-sm btn-white view-project-btn" data-project-id="1">
-                  <i class="fas fa-eye"></i> View Case Study
-                </button>
+                <a href="https://try-sheep-24143063.figma.site/" target="_blank" rel="noopener" class="btn btn-sm btn-white">
+                  <i class="fas fa-external-link-alt"></i> View Live
+                </a>
               </div>
-              <span class="project-category-badge">Landing Page</span>
+              <span class="project-category-badge">E-Commerce UI</span>
+              <span class="project-live-dot"><i class="fas fa-circle"></i> Live</span>
             </div>
             <div class="project-content">
               <div class="project-metrics-badge">
-                <i class="fas fa-chart-line text-emerald"></i> +280% Signups • 0.5s Load
+                <i class="fas fa-shopping-bag text-emerald"></i> Full E-Commerce Figma Prototype
               </div>
-              <h3 class="project-title">Apex Flow — SaaS Analytics Landing Page</h3>
-              <p class="project-summary">
-                A conversion-first landing page crafted for a cloud analytics startup with interactive calculator, dynamic pricing table, and instant lead capture.
-              </p>
+              <h3 class="project-title">ShopSphere — E-Commerce UI Design</h3>
+              <p class="project-summary">A modern, fully interactive Figma prototype for an e-commerce platform featuring product browsing, cart flows, and checkout — designed for maximum conversion.</p>
               <div class="project-tech-tags">
-                <span class="tech-tag">Next.js</span>
-                <span class="tech-tag">Tailwind CSS</span>
-                <span class="tech-tag">Framer Motion</span>
-                <span class="tech-tag">Vercel</span>
+                <span class="tech-tag">Figma</span>
+                <span class="tech-tag">UI/UX Design</span>
+                <span class="tech-tag">Prototyping</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://try-sheep-24143063.figma.site/" target="_blank" rel="noopener" class="btn btn-sm btn-emerald">
+                  <i class="fas fa-external-link-alt"></i> View Live Project
+                </a>
               </div>
             </div>
           </div>
 
-          <!-- Project 2 -->
-          <div class="project-card glass-card" data-category="ecommerce">
+          <!-- Project 2: Chahapremi -->
+          <div class="project-card glass-card real-project-card">
             <div class="project-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&auto=format&fit=crop&q=80" alt="Zenith Apparel E-Commerce" class="project-img" loading="lazy">
+              <img src="assets/chahapremi.png" alt="Chahapremi Relationship Platform" class="project-img" loading="lazy">
               <div class="project-overlay">
-                <button class="btn btn-sm btn-white view-project-btn" data-project-id="2">
-                  <i class="fas fa-eye"></i> View Case Study
-                </button>
+                <a href="https://agent-6a8621f51c1e6ace86907e4c--chahapremi.netlify.app/" target="_blank" rel="noopener" class="btn btn-sm btn-white">
+                  <i class="fas fa-external-link-alt"></i> View Live
+                </a>
               </div>
-              <span class="project-category-badge">E-Commerce</span>
+              <span class="project-category-badge">Web App</span>
+              <span class="project-live-dot"><i class="fas fa-circle"></i> Live</span>
             </div>
             <div class="project-content">
               <div class="project-metrics-badge">
-                <i class="fas fa-shopping-bag text-emerald"></i> ₹18L+ Monthly Sales • Razorpay
+                <i class="fas fa-heart text-emerald"></i> Deployed on Netlify • Full-Stack App
               </div>
-              <h3 class="project-title">Zenith Apparel — D2C Fashion Store</h3>
-              <p class="project-summary">
-                High-performance e-commerce store with 1-click checkout, automated inventory sync, email order confirmations, and size recommendation tools.
-              </p>
+              <h3 class="project-title">Chahapremi — Relationship Platform</h3>
+              <p class="project-summary">A heartfelt web application for connecting people — featuring smooth UI, profile cards, and interactive flows. Built and deployed live on Netlify.</p>
               <div class="project-tech-tags">
-                <span class="tech-tag">React.js</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Razorpay API</span>
-                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">HTML/CSS/JS</span>
+                <span class="tech-tag">Netlify</span>
+                <span class="tech-tag">Responsive Design</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://agent-6a8621f51c1e6ace86907e4c--chahapremi.netlify.app/" target="_blank" rel="noopener" class="btn btn-sm btn-emerald">
+                  <i class="fas fa-external-link-alt"></i> View Live Project
+                </a>
               </div>
             </div>
           </div>
 
-          <!-- Project 3 -->
-          <div class="project-card glass-card" data-category="business">
+          <!-- Project 3: PortfolioX -->
+          <div class="project-card glass-card real-project-card">
             <div class="project-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&auto=format&fit=crop&q=80" alt="Pulse Wellness Clinic Website" class="project-img" loading="lazy">
+              <img src="assets/portfoliox.png" alt="PortfolioX Personal Portfolio" class="project-img" loading="lazy">
               <div class="project-overlay">
-                <button class="btn btn-sm btn-white view-project-btn" data-project-id="3">
-                  <i class="fas fa-eye"></i> View Case Study
-                </button>
+                <a href="https://mineportfoliox.netlify.app/" target="_blank" rel="noopener" class="btn btn-sm btn-white">
+                  <i class="fas fa-external-link-alt"></i> View Live
+                </a>
               </div>
-              <span class="project-category-badge">Business Site</span>
+              <span class="project-category-badge">Portfolio Site</span>
+              <span class="project-live-dot"><i class="fas fa-circle"></i> Live</span>
             </div>
             <div class="project-content">
               <div class="project-metrics-badge">
-                <i class="fas fa-calendar-check text-emerald"></i> +140 Monthly Inquiries • Pune Local SEO
+                <i class="fas fa-user-circle text-emerald"></i> Personal Portfolio • Live on Netlify
               </div>
-              <h3 class="project-title">Pulse Health Clinic — Medical Practice Portal</h3>
-              <p class="project-summary">
-                Complete digital presence for a premier medical practice in Pune with online doctor booking, email appointment confirmations, and localized Google Maps SEO.
-              </p>
+              <h3 class="project-title">PortfolioX — Personal Portfolio Website</h3>
+              <p class="project-summary">A sleek, high-performance personal portfolio site built to impress — showcasing skills, projects, and a clean contact flow. Deployed live on Netlify.</p>
               <div class="project-tech-tags">
                 <span class="tech-tag">HTML5/CSS3</span>
                 <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">Booking Engine</span>
-                <span class="tech-tag">Local SEO</span>
+                <span class="tech-tag">Netlify</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://mineportfoliox.netlify.app/" target="_blank" rel="noopener" class="btn btn-sm btn-emerald">
+                  <i class="fas fa-external-link-alt"></i> View Live Project
+                </a>
               </div>
             </div>
           </div>
 
-          <!-- Project 4 -->
-          <div class="project-card glass-card" data-category="webapp">
-            <div class="project-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80" alt="FinPulse Dashboard" class="project-img" loading="lazy">
-              <div class="project-overlay">
-                <button class="btn btn-sm btn-white view-project-btn" data-project-id="4">
-                  <i class="fas fa-eye"></i> View Case Study
-                </button>
-              </div>
-              <span class="project-category-badge">Web App</span>
-            </div>
-            <div class="project-content">
-              <div class="project-metrics-badge">
-                <i class="fas fa-tachometer-alt text-emerald"></i> 10k+ Active Users • Real-time
-              </div>
-              <h3 class="project-title">FinPulse — Financial SaaS Dashboard</h3>
-              <p class="project-summary">
-                Interactive financial dashboard with real-time charts, automated PDF invoice generation, multi-currency conversion, and role-based user management.
-              </p>
-              <div class="project-tech-tags">
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">TypeScript</span>
-                <span class="tech-tag">Chart.js</span>
-                <span class="tech-tag">REST APIs</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 5 -->
-          <div class="project-card glass-card" data-category="business">
-            <div class="project-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop&q=80" alt="Nova Estates Luxury Portal" class="project-img" loading="lazy">
-              <div class="project-overlay">
-                <button class="btn btn-sm btn-white view-project-btn" data-project-id="5">
-                  <i class="fas fa-eye"></i> View Case Study
-                </button>
-              </div>
-              <span class="project-category-badge">Business Site</span>
-            </div>
-            <div class="project-content">
-              <div class="project-metrics-badge">
-                <i class="fas fa-building text-emerald"></i> High-Ticket Lead Engine
-              </div>
-              <h3 class="project-title">Nova Living — Luxury Real Estate Showcase</h3>
-              <p class="project-summary">
-                Bespoke property showcase featuring virtual floor-plan tours, neighborhood walk-score calculators, and direct agent enquiry routing.
-              </p>
-              <div class="project-tech-tags">
-                <span class="tech-tag">Next.js</span>
-                <span class="tech-tag">CSS3 Grid</span>
-                <span class="tech-tag">Mapbox</span>
-                <span class="tech-tag">SEO Pro</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 6 -->
-          <div class="project-card glass-card" data-category="ecommerce">
-            <div class="project-img-wrapper">
-              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&auto=format&fit=crop&q=80" alt="Taste Of Pune Food Ordering" class="project-img" loading="lazy">
-              <div class="project-overlay">
-                <button class="btn btn-sm btn-white view-project-btn" data-project-id="6">
-                  <i class="fas fa-eye"></i> View Case Study
-                </button>
-              </div>
-              <span class="project-category-badge">E-Commerce / Food</span>
-            </div>
-            <div class="project-content">
-              <div class="project-metrics-badge">
-                <i class="fas fa-utensils text-emerald"></i> Zero Aggregator Commission System
-              </div>
-              <h3 class="project-title">Taste Of Pune — Direct Cloud Kitchen Ordering</h3>
-              <p class="project-summary">
-                Direct-to-consumer online food ordering system saving 30% in food aggregator commissions with automated kitchen ticket printing & digital order updates.
-              </p>
-              <div class="project-tech-tags">
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">UPI QR Pay</span>
-                <span class="tech-tag">Order Gateway</span>
-                <span class="tech-tag">Express.js</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         <!-- Portfolio CTA -->
@@ -1323,18 +1228,21 @@
 
             <!-- Right Form Panel -->
             <div class="contact-form-panel">
-              <h3 class="form-title">Send a Direct Project Inquiry</h3>
-              <p class="form-sub">Fill out the project details below to receive a personalized proposal.</p>
+              <h3 class="form-title">Send a Direct Project Query</h3>
+              <p class="form-sub">Fill out your project details below. Clicking send will directly open your Email App with your query pre-filled to send to Vedant.</p>
+
+              <!-- Live Submission Feedback Box -->
+              <div id="form-feedback" class="form-feedback-box" style="display: none;"></div>
 
               <form id="project-contact-form" class="contact-form" novalidate>
                 <div class="form-row form-row-2">
                   <div class="form-group">
                     <label for="client_name">Your Name *</label>
-                    <input type="text" id="client_name" name="client_name" placeholder="e.g. Rahul Sharma" required class="form-input">
+                    <input type="text" id="client_name" name="name" placeholder="e.g. Rahul Sharma" required class="form-input">
                   </div>
                   <div class="form-group">
                     <label for="client_email">Email Address *</label>
-                    <input type="email" id="client_email" name="client_email" placeholder="e.g. rahul@company.com" required class="form-input">
+                    <input type="email" id="client_email" name="email" placeholder="e.g. rahul@company.com" required class="form-input">
                   </div>
                 </div>
 
@@ -1345,13 +1253,13 @@
                   </div>
                   <div class="form-group">
                     <label for="service_interest">Interested Package / Service</label>
-                    <select id="service_interest" name="service_interest" class="form-input form-select">
-                      <option value="Complete Business Website (₹21,999 / $399)">Complete Business Website (Popular)</option>
-                      <option value="Launch Landing Page (₹9,999 / $199)">Launch Landing Page</option>
-                      <option value="E-Commerce & Custom App (₹39,999 / $699)">E-Commerce & Custom App</option>
-                      <option value="Website Redesign & Speed Optimization">Website Redesign & Speed Makeover</option>
-                      <option value="Monthly Website Care Retainer">Monthly Website Care Retainer</option>
-                      <option value="Custom Scope / Other">Custom Scope / Other</option>
+                    <select id="service_interest" name="service" class="form-input form-select">
+                      <option value="Complete Business Website (₹21,999 / $399) - Best Value">Complete Business Website (₹21,999 / $399) - Best Value</option>
+                      <option value="Launch Landing Page (₹9,999 / $199) - Starter">Launch Landing Page (₹9,999 / $199) - Starter</option>
+                      <option value="E-Commerce & Online Store (₹39,999 / $699)">E-Commerce & Online Store (₹39,999 / $699)</option>
+                      <option value="Website Redesign & Speed Makeover (₹9,999 / $199)">Website Redesign & Speed Makeover (₹9,999 / $199)</option>
+                      <option value="Monthly Website Care Retainer (₹4,999 / $89/mo)">Monthly Website Care Retainer (₹4,999 / $89/mo)</option>
+                      <option value="Custom Affordable Scope / Other">Custom Affordable Scope / Other</option>
                     </select>
                   </div>
                 </div>
@@ -1362,9 +1270,15 @@
                 </div>
 
                 <div class="form-submit-row">
+                  <!-- ONLY ONE SINGLE BUTTON AS REQUESTED -->
                   <button type="submit" id="form-submit-btn" class="btn btn-emerald btn-lg btn-block">
-                    <i class="fas fa-paper-plane"></i> Send Project Inquiry
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Send Query via Email</span>
                   </button>
+
+                  <p class="form-privacy-note">
+                    <i class="fas fa-envelope"></i> Click to send directly to <a href="mailto:contacttovedant5@gmail.com?subject=Direct%20Website%20Query" class="direct-email-link"><strong>contacttovedant5@gmail.com</strong></a> (Guaranteed reply in 2-4 hrs)
+                  </p>
                 </div>
               </form>
             </div>
@@ -1453,7 +1367,7 @@
       <span class="tooltip-title">Need a website?</span>
       <span class="tooltip-sub">Get in touch with Vedant</span>
     </div>
-    <a href="#contact" class="floating-inquiry-btn" aria-label="Send Project Inquiry to Vedant">
+    <a href="mailto:contacttovedant5@gmail.com?subject=Quick%20Website%20Inquiry%20for%20Vedant&body=Hi%20Vedant,%0A%0AI%20am%20interested%20in%20your%20web%20design%20services.%20Please%20let%20me%20know%20your%20current%20availability." class="floating-inquiry-btn" aria-label="Send Direct Email to Vedant">
       <i class="fas fa-envelope"></i>
     </a>
   </div>

@@ -1,26 +1,26 @@
 /**
  * VB PORTFOLIO & CLIENT ACQUISITION - INTERACTIVE LOGIC
- * Author: Vedant (VB) - Pune, Maharashtra
+ * Author: Vedant (VB) - Freelance Web Developer, Pune, Maharashtra
  * Email: contacttovedant5@gmail.com
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Global App State
+  // Global App State (Affordable Starter Pricing for New Web Designer)
   const state = {
     currency: 'INR', // 'INR' or 'USD'
     estimator: {
       type: 'landing',
       typeName: 'Landing Page',
-      basePriceINR: 9999,
-      basePriceUSD: 199,
+      basePriceINR: 2999,
+      basePriceUSD: 49,
       pages: 3,
-      addonsTotalINR: 2500, // speed_opt checked by default
-      addonsTotalUSD: 45,
-      addonsList: ['Hyper Performance & CDN'],
+      addonsTotalINR: 599, // speed_opt checked by default
+      addonsTotalUSD: 9,
+      addonsList: ['Hyper Performance & Speed'],
       multiplier: 1.0,
       timelineName: 'Standard (1 - 2 weeks)',
-      finalPriceINR: 12499,
-      finalPriceUSD: 244
+      finalPriceINR: 3598,
+      finalPriceUSD: 58
     }
   };
 
@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggleBtn = document.getElementById('theme-toggle');
   const htmlRoot = document.documentElement;
 
-  // Check saved theme
-  const savedTheme = localStorage.getItem('vb_theme') || 'dark';
+  // Check saved theme (default light white & purple)
+  const savedTheme = localStorage.getItem('vb_theme') || 'light';
   htmlRoot.setAttribute('data-theme', savedTheme);
 
   if (themeToggleBtn) {
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       htmlRoot.setAttribute('data-theme', newTheme);
       localStorage.setItem('vb_theme', newTheme);
-      showToast(`Switched to ${newTheme === 'dark' ? 'Dark' : 'Light'} Mode`, newTheme === 'dark' ? 'fa-moon' : 'fa-sun', 2000);
+      showToast(`Switched to ${newTheme === 'dark' ? 'Dark' : 'White & Purple'} Theme`, newTheme === 'dark' ? 'fa-moon' : 'fa-sun', 2000);
     });
   }
 
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
-     5. PROJECT COST ESTIMATOR (LEAD MAGNET ENGINE)
+     5. PROJECT COST ESTIMATOR (AFFORDABLE BEGINNER RATES)
      ========================================================================== */
   const projectTypeRadios = document.querySelectorAll('input[name="project_type"]');
   const pageSlider = document.getElementById('page-slider');
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateEstimator() {
-    // 1. Project Type
+    // 1. Project Type Base
     const selectedType = document.querySelector('input[name="project_type"]:checked');
     if (selectedType) {
       state.estimator.type = selectedType.value;
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
       pageCountVal.textContent = pageVal === 1 ? '1 Single Page' : `${pageVal} Custom Pages`;
     }
 
-    // Extra page cost: For >3 pages on landing or >5 on business
+    // Extra page cost: For >1 page on landing or >3 on business
     let extraPages = Math.max(0, pageVal - (state.estimator.type === 'landing' ? 1 : 3));
     let extraPageCostINR = extraPages * 1200;
     let extraPageCostUSD = extraPages * 20;
@@ -288,17 +288,21 @@ document.addEventListener('DOMContentLoaded', () => {
   syncRadioCardUI(speedRadios);
   updateEstimator();
 
-  // Send Estimator Scope via Email
+  // Send Estimator Scope via Email (Direct to Gmail Compose)
   sendEstimateEmailBtn?.addEventListener('click', () => {
     const est = state.estimator;
     const priceStr = state.currency === 'INR' ? `₹${est.finalPriceINR.toLocaleString('en-IN')}` : `$${est.finalPriceUSD.toLocaleString('en-US')}`;
     const addonsStr = est.addonsList.length > 0 ? est.addonsList.join(', ') : 'Standard Features';
 
-    const subject = encodeURIComponent(`Project Proposal Scope - ${est.typeName} (${priceStr})`);
-    const body = encodeURIComponent(`Hi Vedant,\n\nI calculated a project scope on your portfolio website:\n\n- Project Type: ${est.typeName}\n- Estimated Pages: ${est.pages}\n- Selected Add-ons: ${addonsStr}\n- Timeline: ${est.timelineName}\n- Estimated Ballpark: ${priceStr}\n\nPlease review and let me know the next steps to get started with this proposal.`);
+    const subject = `Project Proposal Scope - ${est.typeName} (${priceStr})`;
+    const body = `Hi Vedant (VB),\n\nI calculated a project scope on your portfolio website:\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📋 ESTIMATED PROJECT SCOPE\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n• Project Type: ${est.typeName}\n• Estimated Pages: ${est.pages}\n• Selected Add-ons: ${addonsStr}\n• Timeline Preference: ${est.timelineName}\n• Total Estimated Cost: ${priceStr}\n\nPlease review this scope and let me know how we can get started!`;
 
-    window.location.href = `mailto:contacttovedant5@gmail.com?subject=${subject}&body=${body}`;
-    showToast('Opening your email client to send scope...', 'fa-envelope');
+    const encSubject = encodeURIComponent(subject);
+    const encBody = encodeURIComponent(body);
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=contacttovedant5@gmail.com&su=${encSubject}&body=${encBody}`;
+
+    window.open(gmailUrl, '_blank');
+    showToast('Opening Gmail with calculated scope pre-filled...', 'fa-envelope-open', 4000);
   });
 
   // Copy Estimate Summary to Clipboard
@@ -310,7 +314,7 @@ Type: ${est.typeName}
 Pages: ${est.pages}
 Add-ons: ${est.addonsList.join(', ') || 'None'}
 Timeline: ${est.timelineName}
-Estimate: ${priceStr}
+Estimated Cost: ${priceStr}
 Contact Email: contacttovedant5@gmail.com`;
 
     navigator.clipboard.writeText(textToCopy).then(() => {
@@ -359,10 +363,10 @@ Contact Email: contacttovedant5@gmail.com`;
       category: 'High-Converting Landing Page',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&auto=format&fit=crop&q=80',
       client: 'Apex Analytics Inc.',
-      timeline: '5 Days Delivery',
+      timeline: '4 Days Delivery',
       metrics: ['+280% Signups in Month 1', '0.5s First Contentful Paint', '99/100 Mobile PageSpeed'],
       challenge: 'The client was running paid Google Ads to an outdated, slow website with a high 74% bounce rate and dismal 1.8% conversion.',
-      solution: 'We engineered a high-velocity, dark-mode landing page with value-first copywriting, an interactive pricing calculator, and seamless HubSpot CRM lead routing.',
+      solution: 'We engineered a high-velocity landing page with value-first copywriting, an interactive pricing calculator, and seamless lead capture.',
       stack: ['Next.js 14', 'Tailwind CSS', 'Framer Motion', 'Vercel Edge CDN'],
       testimonial: '"Vedant completely changed our acquisition economics. Our cost per signup dropped by 62% in the very first week."'
     },
@@ -371,7 +375,7 @@ Contact Email: contacttovedant5@gmail.com`;
       category: 'E-Commerce Store & Checkout',
       image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000&auto=format&fit=crop&q=80',
       client: 'Zenith Fashion House',
-      timeline: '2.5 Weeks Delivery',
+      timeline: '1.5 Weeks Delivery',
       metrics: ['₹18L+ Monthly Sales', '1-Click UPI & Razorpay Checkout', '42% Higher Mobile Orders'],
       challenge: 'Their existing Shopify theme was bloated with third-party plugins causing slow 4.5s load times and high cart abandonment.',
       solution: 'Built a lightning-fast custom storefront with instant product search, optimized cart drawer, automatic coupon application, and automated invoice delivery.',
@@ -383,7 +387,7 @@ Contact Email: contacttovedant5@gmail.com`;
       category: 'Business Website & Local SEO',
       image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1000&auto=format&fit=crop&q=80',
       client: 'Pulse Medical Center (Pune)',
-      timeline: '8 Days Delivery',
+      timeline: '6 Days Delivery',
       metrics: ['#1 Google Rank for Pune Clinic', '140+ Direct Monthly Appointments', 'Zero Hosting Glitches'],
       challenge: 'Patients were having trouble finding doctor schedules and booking appointments on mobile, relying heavily on slow phone reception.',
       solution: 'Designed a clean, calming UI with instant doctor calendar booking, automated email appointment reminders, and localized Google Maps Schema SEO.',
@@ -395,7 +399,7 @@ Contact Email: contacttovedant5@gmail.com`;
       category: 'Custom Web Application',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&auto=format&fit=crop&q=80',
       client: 'FinPulse Tech',
-      timeline: '3 Weeks Delivery',
+      timeline: '2 Weeks Delivery',
       metrics: ['10,000+ Active Users', 'Sub-100ms API Latency', 'Multi-currency support'],
       challenge: 'Needed an intuitive, lag-free analytics dashboard capable of rendering complex real-time cashflow charts and generating instant PDF invoices.',
       solution: 'Built a modular TypeScript application with responsive chart visualizations, role-based authentication, and automated PDF exports.',
@@ -407,7 +411,7 @@ Contact Email: contacttovedant5@gmail.com`;
       category: 'High-Ticket Business Website',
       image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1000&auto=format&fit=crop&q=80',
       client: 'Nova Realty Developers',
-      timeline: '10 Days Delivery',
+      timeline: '7 Days Delivery',
       metrics: ['₹4.2 Cr Project Bookings', 'Virtual Floor Plan Tours', 'Direct Lead Engine'],
       challenge: 'Needed a premier digital brochure to showcase high-net-worth villas with interactive neighborhood insights and fast lead capture.',
       solution: 'Crafted an editorial-grade real estate showcase with ultra-high-resolution asset optimization, virtual walk-throughs, and automated inquiry distribution.',
@@ -419,7 +423,7 @@ Contact Email: contacttovedant5@gmail.com`;
       category: 'Food Delivery & Online Store',
       image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80',
       client: 'Taste Of Pune Hospitality',
-      timeline: '12 Days Delivery',
+      timeline: '8 Days Delivery',
       metrics: ['Saved 30% Swiggy/Zomato Commissions', 'Instant UPI QR Checkout', 'Direct Digital Menu'],
       challenge: 'Excessive 30% commission fees on third-party food delivery aggregators were eating into daily restaurant profits.',
       solution: 'Created a direct online ordering portal allowing customers to order in 3 clicks with instant UPI pay and automated digital kitchen tickets.',
@@ -448,7 +452,7 @@ Contact Email: contacttovedant5@gmail.com`;
 
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.5rem; background: var(--bg-surface-elevated); padding: 1rem; border-radius: var(--radius-md);">
         ${data.metrics.map(m => `
-          <div style="font-size: 0.85rem; font-weight: 700; color: var(--emerald-400); display: flex; align-items: center; gap: 0.4rem;">
+          <div style="font-size: 0.85rem; font-weight: 700; color: var(--purple-700); display: flex; align-items: center; gap: 0.4rem;">
             <i class="fas fa-check-circle"></i> <span>${m}</span>
           </div>
         `).join('')}
@@ -472,14 +476,14 @@ Contact Email: contacttovedant5@gmail.com`;
           </div>
         </div>
 
-        <div style="padding: 1rem; background: rgba(16, 185, 129, 0.08); border-left: 3px solid var(--emerald-500); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+        <div style="padding: 1rem; background: var(--purple-50); border-left: 3px solid var(--purple-600); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
           <p style="font-size: 0.9rem; font-style: italic; color: var(--text-primary);">${data.testimonial}</p>
-          <span style="font-size: 0.78rem; color: var(--emerald-400); font-weight: 600; display: block; margin-top: 0.4rem;">— ${data.client}</span>
+          <span style="font-size: 0.78rem; color: var(--purple-700); font-weight: 700; display: block; margin-top: 0.4rem;">— ${data.client}</span>
         </div>
       </div>
 
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="#contact" class="btn btn-emerald btn-block btn-lg" onclick="document.getElementById('case-study-modal').classList.remove('open'); document.body.style.overflow='';">
+        <a href="mailto:contacttovedant5@gmail.com?subject=Inquiry%20for%20Project%20like%20${encodeURIComponent(data.title)}&body=Hi%20Vedant,%0A%0AI%20saw%20your%20case%20study%20for%20${encodeURIComponent(data.title)}%20and%20I%20would%20like%20a%20similar%20website%20built%20for%20my%20business.%0A%0APlease%20let%20me%20know%20your%20availability%20and%20timeline." class="btn btn-emerald btn-block btn-lg" onclick="document.getElementById('case-study-modal').classList.remove('open'); document.body.style.overflow='';">
           <i class="fas fa-paper-plane"></i> Request a Website Like This
         </a>
       </div>
@@ -534,9 +538,11 @@ Contact Email: contacttovedant5@gmail.com`;
   });
 
   /* ==========================================================================
-     8. CONTACT FORM & DIRECT EMAIL DISPATCH
+     8. QUERY CONTACT FORM & DIRECT EMAIL APP LAUNCHER
      ========================================================================== */
   const contactForm = document.getElementById('project-contact-form');
+  const formSubmitBtn = document.getElementById('form-submit-btn');
+  const formFeedback = document.getElementById('form-feedback');
 
   function getValidatedFormData() {
     const nameInput = document.getElementById('client_name');
@@ -547,7 +553,7 @@ Contact Email: contacttovedant5@gmail.com`;
 
     const name = nameInput?.value.trim() || '';
     const email = emailInput?.value.trim() || '';
-    const company = companyInput?.value.trim() || 'N/A';
+    const company = companyInput?.value.trim() || 'Not specified';
     const service = serviceSelect?.value || 'Complete Business Website';
     const details = detailsInput?.value.trim() || '';
 
@@ -570,17 +576,49 @@ Contact Email: contacttovedant5@gmail.com`;
     return { name, email, company, service, details };
   }
 
-  // Direct Email Submission
+  function generateEmailDraft(data) {
+    const subject = `🚀 Web Design Query from ${data.name} - ${data.service}`;
+    const body = `Hi Vedant (VB),\n\nI would like to discuss a web design project with you.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📋 CLIENT QUERY DETAILS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n• Client Name: ${data.name}\n• Email Address: ${data.email}\n• Company / Website: ${data.company}\n• Selected Package / Service: ${data.service}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📝 PROJECT SCOPE & REQUIREMENTS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n${data.details}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📍 Location: Pune / Remote Client\nSent via VB Portfolio Website`;
+    
+    return { subject, body };
+  }
+
+  // SINGLE PRIMARY BUTTON SUBMIT: Opens default Email App / Webmail with pre-filled query
   contactForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = getValidatedFormData();
     if (!data) return;
 
-    const subject = encodeURIComponent(`Project Inquiry from ${data.name} - ${data.service}`);
-    const body = encodeURIComponent(`Hi Vedant,\n\nName: ${data.name}\nEmail: ${data.email}\nCompany / Website: ${data.company}\nInterested Package: ${data.service}\n\nProject Scope & Details:\n${data.details}\n\nLocation: Pune / Global`);
-    
-    window.location.href = `mailto:contacttovedant5@gmail.com?subject=${subject}&body=${body}`;
-    showToast('Opening email client to send your inquiry...', 'fa-envelope');
+    const { subject, body } = generateEmailDraft(data);
+    const encSubject = encodeURIComponent(subject);
+    const encBody = encodeURIComponent(body);
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=contacttovedant5@gmail.com&su=${encSubject}&body=${encBody}`;
+
+    // Directly open Gmail in a new tab
+    window.open(gmailUrl, '_blank');
+
+    showToast('Opening Gmail with your query pre-filled...', 'fa-envelope-open', 4000);
+
+    // Display interactive status box with instant 1-click manual trigger buttons
+    if (formFeedback) {
+      formFeedback.className = 'form-feedback-box success';
+      formFeedback.innerHTML = `
+        <i class="fas fa-paper-plane" style="font-size: 1.5rem; color: var(--purple-600); margin-top: 2px;"></i>
+        <div style="width: 100%;">
+          <strong style="font-size: 1rem; color: var(--text-primary);">Opening Gmail with Your Query...</strong>
+          <p style="margin: 0.4rem 0 0.8rem 0; font-size: 0.88rem; color: var(--text-secondary);">
+            Your query has been formatted and addressed to <strong>contacttovedant5@gmail.com</strong>.
+          </p>
+          <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+            <a href="${gmailUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-emerald btn-sm" style="text-decoration:none;">
+              <i class="fab fa-google"></i> If it did not open, click here to open Gmail
+            </a>
+          </div>
+        </div>
+      `;
+      formFeedback.style.display = 'flex';
+      formFeedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
   });
 
   /* ==========================================================================
@@ -631,19 +669,59 @@ Contact Email: contacttovedant5@gmail.com`;
     });
   });
 
-  // Package booking CTA button links handler (pre-fill email)
+  // Package booking CTA button links handler (selects package in dropdown & smooth scrolls to contact)
   const packageCtas = document.querySelectorAll('.package-cta');
+  const serviceDropdown = document.getElementById('service_interest');
+
   packageCtas.forEach(cta => {
-    cta.addEventListener('click', (e) => {
-      const pkgName = cta.getAttribute('data-package') || 'Website Package';
-      const cur = state.currency;
-      const priceVal = cta.closest('.package-card')?.querySelector('.price-val')?.textContent || '';
-      const symbol = cur === 'INR' ? '₹' : '$';
+    cta.addEventListener('click', () => {
+      const pkgName = cta.getAttribute('data-package') || '';
+      if (serviceDropdown && pkgName) {
+        for (let i = 0; i < serviceDropdown.options.length; i++) {
+          if (serviceDropdown.options[i].text.includes(pkgName) || serviceDropdown.options[i].value.includes(pkgName)) {
+            serviceDropdown.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    });
+  });
+
+  // Smooth scroll and focus on contact form when clicking links pointing to #contact
+  document.querySelectorAll('a[href="#contact"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const contactSection = document.getElementById('contact');
+      const nameInput = document.getElementById('client_name');
+      if (contactSection) {
+        setTimeout(() => {
+          nameInput?.focus();
+        }, 500);
+      }
+    });
+  });
+
+  // Intercept all mailto links and open them directly in Gmail Web Compose in the browser
+  document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
       
-      const subject = encodeURIComponent(`Booking Inquiry for ${pkgName} (${symbol}${priceVal})`);
-      const body = encodeURIComponent(`Hi Vedant,\n\nI would like to book the "${pkgName}" (${symbol}${priceVal}).\n\nPlease let me know the project kickoff details and timeline.`);
+      const mailtoUrl = link.getAttribute('href');
+      const email = 'contacttovedant5@gmail.com';
       
-      cta.href = `mailto:contacttovedant5@gmail.com?subject=${subject}&body=${body}`;
+      let subject = '';
+      let body = '';
+      
+      const queryPart = mailtoUrl.split('?')[1];
+      if (queryPart) {
+        const params = new URLSearchParams(queryPart);
+        subject = params.get('subject') || '';
+        body = params.get('body') || '';
+      }
+      
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      window.open(gmailUrl, '_blank');
+      showToast('Opening Gmail in your browser...', 'fa-envelope-open', 3500);
     });
   });
 
