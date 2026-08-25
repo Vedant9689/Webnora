@@ -1163,6 +1163,20 @@ ul {
   margin-top: 1.5rem;
 }
 
+.us-pricing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
 .currency-label {
   font-size: 0.88rem;
   color: var(--text-muted);

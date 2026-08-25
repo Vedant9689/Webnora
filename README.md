@@ -11,8 +11,8 @@ A high-converting, modern, and ultra-responsive portfolio and client acquisition
 ## ✨ Features
 
 - ⚡ **Lightning Fast & Lightweight**: Pure semantic HTML5, modern CSS3 (custom design system tokens), and vanilla JavaScript with zero framework overhead.
-- 💰 **Transparent Service Pricing Packages**: Complete pricing tiers with deliverables, turnaround times, and dual-currency switcher (₹ INR / $ USD).
-- 🧮 **Interactive Project Cost Calculator**: Dynamic slider and add-on selector allowing prospective clients to estimate project costs and dispatch scopes directly via email.
+- 💰 **Transparent US Service Pricing Packages**: Complete pricing tiers with deliverables, turnaround times, and USD ($) rates tailored for US & global clients.
+- 🧮 **Interactive Project Cost Calculator**: Dynamic slider and add-on selector in USD allowing prospective clients to estimate project costs and dispatch scopes directly via email.
 - 💼 **Case Studies & Proof of Work**: Filterable project showcases with before/after ROI metrics and interactive case study modals.
 - 🌓 **Obsidian Dark & Clean Studio Light Themes**: Smooth theme switcher with local storage persistence.
 - 📱 **100% Mobile Responsive**: Mobile navigation drawer, fluid typography, and touch-optimized controls.
