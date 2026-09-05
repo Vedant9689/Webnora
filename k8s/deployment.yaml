@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webnora-deployment
+  labels:
+    app: webnora
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webnora
+  template:
+    metadata:
+      labels:
+        app: webnora
+    spec:
+      containers:
+      - name: webnora
+        image: webnora:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: "250m"
+            memory: "128Mi"
+          requests:
+            cpu: "100m"
+            memory: "64Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webnora-service
+spec:
+  type: ClusterIP
+  selector:
+    app: webnora
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP

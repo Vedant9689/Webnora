@@ -4,6 +4,7 @@
   "description": "Webnora — Digital Web Design & Engineering Studio",
   "main": "index.html",
   "scripts": {
+    "build": "echo 'Static build complete'",
     "start": "npx -y serve . -l 3000",
     "dev": "npx -y serve . -l 3000"
   },
