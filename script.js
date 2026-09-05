@@ -1,6 +1,6 @@
 /**
- * VB PORTFOLIO & CLIENT ACQUISITION - INTERACTIVE LOGIC
- * Author: Vedant (VB) - Freelance Web Developer, Pune, Maharashtra
+ * WEBNORA DIGITAL STUDIO - INTERACTIVE LOGIC
+ * Brand: Webnora (Digital Web Agency & Studio)
  * Email: contacttovedant5@gmail.com
  */
 
@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggleBtn = document.getElementById('theme-toggle');
   const htmlRoot = document.documentElement;
 
-  // Check saved theme (default light white & purple)
-  const savedTheme = localStorage.getItem('vb_theme') || 'light';
+  // Check saved theme (default dark monochrome)
+  const savedTheme = localStorage.getItem('webnora_theme') || 'dark';
   htmlRoot.setAttribute('data-theme', savedTheme);
 
   if (themeToggleBtn) {
@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const currentTheme = htmlRoot.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       htmlRoot.setAttribute('data-theme', newTheme);
-      localStorage.setItem('vb_theme', newTheme);
-      showToast(`Switched to ${newTheme === 'dark' ? 'Dark' : 'White & Purple'} Theme`, newTheme === 'dark' ? 'fa-moon' : 'fa-sun', 2000);
+      localStorage.setItem('webnora_theme', newTheme);
+      showToast(`Switched Theme Mode`, newTheme === 'dark' ? 'fa-moon' : 'fa-sun', 2000);
     });
   }
 
@@ -279,8 +279,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const priceStr = `$${est.finalPriceUSD.toLocaleString('en-US')}`;
     const addonsStr = est.addonsList.length > 0 ? est.addonsList.join(', ') : 'Standard Features';
 
-    const subject = `Project Proposal Scope - ${est.typeName} (${priceStr})`;
-    const body = `Hi Vedant (VB),\n\nI calculated a project scope on your portfolio website:\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📋 ESTIMATED PROJECT SCOPE\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n• Project Type: ${est.typeName}\n• Estimated Pages: ${est.pages}\n• Selected Add-ons: ${addonsStr}\n• Timeline Preference: ${est.timelineName}\n• Total Estimated Cost: ${priceStr}\n\nPlease review this scope and let me know how we can get started!`;
+    const subject = `Webnora Project Scope - ${est.typeName} (${priceStr})`;
+    const body = `Hi Webnora Team,\n\nI calculated a project scope on your website:\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📋 ESTIMATED PROJECT SCOPE\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n• Project Type: ${est.typeName}\n• Estimated Pages: ${est.pages}\n• Selected Add-ons: ${addonsStr}\n• Timeline Preference: ${est.timelineName}\n• Total Estimated Cost: ${priceStr}\n\nPlease review this scope and let us know how we can get started!`;
 
     const encSubject = encodeURIComponent(subject);
     const encBody = encodeURIComponent(body);
@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
   copyEstimateBtn?.addEventListener('click', () => {
     const est = state.estimator;
     const priceStr = `$${est.finalPriceUSD.toLocaleString('en-US')}`;
-    const textToCopy = `VB Portfolio Scope Estimate:
+    const textToCopy = `Webnora Project Scope Estimate:
 Type: ${est.typeName}
 Pages: ${est.pages}
 Add-ons: ${est.addonsList.join(', ') || 'None'}
@@ -353,7 +353,7 @@ Contact Email: contacttovedant5@gmail.com`;
       challenge: 'The client was running paid Google Ads to an outdated, slow website with a high 74% bounce rate and dismal 1.8% conversion.',
       solution: 'We engineered a high-velocity landing page with value-first copywriting, an interactive pricing calculator, and seamless lead capture.',
       stack: ['Next.js 14', 'Tailwind CSS', 'Framer Motion', 'Vercel Edge CDN'],
-      testimonial: '"Vedant completely changed our acquisition economics. Our cost per signup dropped by 62% in the very first week."'
+      testimonial: '"Webnora completely changed our acquisition economics. Our cost per signup dropped by 62% in the very first week."'
     },
     2: {
       title: 'Zenith Apparel — Modern D2C Fashion Store',
@@ -389,7 +389,7 @@ Contact Email: contacttovedant5@gmail.com`;
       challenge: 'Needed an intuitive, lag-free analytics dashboard capable of rendering complex real-time cashflow charts and generating instant PDF invoices.',
       solution: 'Built a modular TypeScript application with responsive chart visualizations, role-based authentication, and automated PDF exports.',
       stack: ['React 18', 'TypeScript', 'Chart.js', 'Node.js', 'PostgreSQL'],
-      testimonial: '"Vedant is rare — a developer who understands both hardcore code architecture and sleek aesthetic design."'
+      testimonial: '"Webnora is rare — a studio that understands both hardcore code architecture and sleek aesthetic design."'
     },
     5: {
       title: 'Nova Living — Luxury Real Estate Showcase',
@@ -468,7 +468,7 @@ Contact Email: contacttovedant5@gmail.com`;
       </div>
 
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="mailto:contacttovedant5@gmail.com?subject=Inquiry%20for%20Project%20like%20${encodeURIComponent(data.title)}&body=Hi%20Vedant,%0A%0AI%20saw%20your%20case%20study%20for%20${encodeURIComponent(data.title)}%20and%20I%20would%20like%20a%20similar%20website%20built%20for%20my%20business.%0A%0APlease%20let%20me%20know%20your%20availability%20and%20timeline." class="btn btn-emerald btn-block btn-lg" onclick="document.getElementById('case-study-modal').classList.remove('open'); document.body.style.overflow='';">
+        <a href="mailto:contacttovedant5@gmail.com?subject=Inquiry%20for%20Project%20like%20${encodeURIComponent(data.title)}&body=Hi%20Webnora%20Team,%0A%0AI%20saw%20your%20case%20study%20for%20${encodeURIComponent(data.title)}%20and%20I%20would%20like%20a%20similar%20website%20built%20for%20my%20business.%0A%0APlease%20let%20me%20know%20your%20availability%20and%20timeline." class="btn btn-emerald btn-block btn-lg" onclick="document.getElementById('case-study-modal').classList.remove('open'); document.body.style.overflow='';">
           <i class="fas fa-paper-plane"></i> Request a Website Like This
         </a>
       </div>
@@ -563,7 +563,7 @@ Contact Email: contacttovedant5@gmail.com`;
 
   function generateEmailDraft(data) {
     const subject = `🚀 Web Design Query from ${data.name} - ${data.service}`;
-    const body = `Hi Vedant (VB),\n\nI would like to discuss a web design project with you.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📋 CLIENT QUERY DETAILS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n• Client Name: ${data.name}\n• Email Address: ${data.email}\n• Company / Website: ${data.company}\n• Selected Package / Service: ${data.service}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📝 PROJECT SCOPE & REQUIREMENTS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n${data.details}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📍 Location: Pune / Remote Client\nSent via VB Portfolio Website`;
+    const body = `Hi Webnora Team,\n\nI would like to discuss a web design project with Webnora Studio.\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📋 CLIENT QUERY DETAILS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n• Client Name: ${data.name}\n• Email Address: ${data.email}\n• Company / Website: ${data.company}\n• Selected Package / Service: ${data.service}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📝 PROJECT SCOPE & REQUIREMENTS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n${data.details}\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSent via Webnora Website`;
     
     return { subject, body };
   }

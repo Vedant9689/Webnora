@@ -1,19 +1,19 @@
 {
-  "name": "vb-portfolio",
+  "name": "webnora",
   "version": "1.0.0",
-  "description": "Freelance Web Developer Portfolio for VB (Vedant) - Pune, Maharashtra",
+  "description": "Webnora — Digital Web Design & Engineering Studio",
   "main": "index.html",
   "scripts": {
     "start": "npx -y serve . -l 3000",
     "dev": "npx -y serve . -l 3000"
   },
   "keywords": [
-    "portfolio",
+    "webnora",
+    "web-studio",
+    "web-design",
     "freelance-developer",
-    "web-development",
-    "pune",
-    "vedant"
+    "web-development"
   ],
-  "author": "Vedant (VB) <contacttovedant5@gmail.com>",
+  "author": "Webnora Studio <contacttovedant5@gmail.com>",
   "license": "MIT"
 }
