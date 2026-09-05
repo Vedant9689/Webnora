@@ -273,7 +273,30 @@ document.addEventListener('DOMContentLoaded', () => {
   syncRadioCardUI(speedRadios);
   updateEstimator();
 
-  // Send Estimator Scope via Email (Direct to Gmail Compose)
+  // Helper to detect mobile device
+  const isMobileDevice = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+  };
+
+  // Helper to open Email client (Native Gmail App on mobile, Web Gmail on desktop)
+  function openEmailClient(email, subject = '', body = '') {
+    const encSubject = encodeURIComponent(subject);
+    const encBody = encodeURIComponent(body);
+    const mailtoUrl = `mailto:${email}?subject=${encSubject}&body=${encBody}`;
+    const webGmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encSubject}&body=${encBody}`;
+
+    if (isMobileDevice()) {
+      // On mobile, launch default native Gmail / Email app directly via mailto:
+      window.location.href = mailtoUrl;
+      showToast('Opening default Gmail app...', 'fa-envelope-open', 3500);
+    } else {
+      // On desktop, open Web Gmail in new browser tab
+      window.open(webGmailUrl, '_blank');
+      showToast('Opening Gmail in your browser...', 'fa-envelope-open', 3500);
+    }
+  }
+
+  // Send Estimator Scope via Email
   sendEstimateEmailBtn?.addEventListener('click', () => {
     const est = state.estimator;
     const priceStr = `$${est.finalPriceUSD.toLocaleString('en-US')}`;
@@ -282,12 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const subject = `Webnora Project Scope - ${est.typeName} (${priceStr})`;
     const body = `Hi Webnora Team,\n\nI calculated a project scope on your website:\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n📋 ESTIMATED PROJECT SCOPE\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n• Project Type: ${est.typeName}\n• Estimated Pages: ${est.pages}\n• Selected Add-ons: ${addonsStr}\n• Timeline Preference: ${est.timelineName}\n• Total Estimated Cost: ${priceStr}\n\nPlease review this scope and let us know how we can get started!`;
 
-    const encSubject = encodeURIComponent(subject);
-    const encBody = encodeURIComponent(body);
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=hellowebnora@gmail.com&su=${encSubject}&body=${encBody}`;
-
-    window.open(gmailUrl, '_blank');
-    showToast('Opening Gmail with calculated scope pre-filled...', 'fa-envelope-open', 4000);
+    openEmailClient('hellowebnora@gmail.com', subject, body);
   });
 
   // Copy Estimate Summary to Clipboard
@@ -541,26 +559,27 @@ Contact Email: hellowebnora@gmail.com`;
     const { subject, body } = generateEmailDraft(data);
     const encSubject = encodeURIComponent(subject);
     const encBody = encodeURIComponent(body);
+    const mailtoUrl = `mailto:hellowebnora@gmail.com?subject=${encSubject}&body=${encBody}`;
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=hellowebnora@gmail.com&su=${encSubject}&body=${encBody}`;
 
-    // Directly open Gmail in a new tab
-    window.open(gmailUrl, '_blank');
-
-    showToast('Opening Gmail with your query pre-filled...', 'fa-envelope-open', 4000);
+    openEmailClient('hellowebnora@gmail.com', subject, body);
 
     // Display interactive status box with instant 1-click manual trigger buttons
     if (formFeedback) {
       formFeedback.className = 'form-feedback-box success';
       formFeedback.innerHTML = `
-        <i class="fas fa-paper-plane" style="font-size: 1.5rem; color: var(--purple-600); margin-top: 2px;"></i>
+        <i class="fas fa-paper-plane" style="font-size: 1.5rem; color: var(--text-primary); margin-top: 2px;"></i>
         <div style="width: 100%;">
-          <strong style="font-size: 1rem; color: var(--text-primary);">Opening Gmail with Your Query...</strong>
+          <strong style="font-size: 1rem; color: var(--text-primary);">Opening Default Gmail App / Webmail...</strong>
           <p style="margin: 0.4rem 0 0.8rem 0; font-size: 0.88rem; color: var(--text-secondary);">
             Your query has been formatted and addressed to <strong>hellowebnora@gmail.com</strong>.
           </p>
           <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
-            <a href="${gmailUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-emerald btn-sm" style="text-decoration:none;">
-              <i class="fab fa-google"></i> If it did not open, click here to open Gmail
+            <a href="${mailtoUrl}" class="btn btn-emerald btn-sm" style="text-decoration:none;">
+              <i class="fas fa-envelope"></i> Open Native Gmail App
+            </a>
+            <a href="${gmailUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="text-decoration:none;">
+              <i class="fab fa-google"></i> Open Web Gmail
             </a>
           </div>
         </div>
@@ -649,11 +668,15 @@ Contact Email: hellowebnora@gmail.com`;
     });
   });
 
-  // Intercept all mailto links and open them directly in Gmail Web Compose in the browser
+  // Smart Email Link Handler: Launches native Gmail app on mobile, Web Gmail on desktop
   document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
+      // On mobile devices, allow default browser mailto action to launch installed native Gmail App directly
+      if (isMobileDevice()) {
+        return;
+      }
       
+      e.preventDefault();
       const mailtoUrl = link.getAttribute('href');
       const email = 'hellowebnora@gmail.com';
       
@@ -667,10 +690,7 @@ Contact Email: hellowebnora@gmail.com`;
         body = params.get('body') || '';
       }
       
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      
-      window.open(gmailUrl, '_blank');
-      showToast('Opening Gmail in your browser...', 'fa-envelope-open', 3500);
+      openEmailClient(email, subject, body);
     });
   });
 
