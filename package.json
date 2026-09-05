@@ -4,8 +4,8 @@
   "description": "Webnora — Digital Web Design & Engineering Studio",
   "main": "index.html",
   "scripts": {
-    "build": "echo 'Static build complete'",
-    "start": "npx -y serve . -l 3000",
+    "build": "node -e \"const fs=require('fs'); fs.mkdirSync('dist',{recursive:true}); ['index.html','style.css','script.js'].forEach(f=>fs.copyFileSync(f,'dist/'+f)); fs.cpSync('assets','dist/assets',{recursive:true}); console.log('Static build ready in dist');\"",
+    "start": "npx -y serve dist -l 3000",
     "dev": "npx -y serve . -l 3000"
   },
   "keywords": [
