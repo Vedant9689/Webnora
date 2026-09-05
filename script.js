@@ -344,76 +344,40 @@ Contact Email: hellowebnora@gmail.com`;
   // Case Study Details Data Store
   const caseStudies = {
     1: {
-      title: 'Apex Flow — SaaS Analytics Platform',
-      category: 'High-Converting Landing Page',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&auto=format&fit=crop&q=80',
-      client: 'Apex Analytics Inc.',
-      timeline: '4 Days Delivery',
-      metrics: ['+280% Signups in Month 1', '0.5s First Contentful Paint', '99/100 Mobile PageSpeed'],
-      challenge: 'The client was running paid Google Ads to an outdated, slow website with a high 74% bounce rate and dismal 1.8% conversion.',
-      solution: 'We engineered a high-velocity landing page with value-first copywriting, an interactive pricing calculator, and seamless lead capture.',
-      stack: ['Next.js 14', 'Tailwind CSS', 'Framer Motion', 'Vercel Edge CDN'],
-      testimonial: '"Webnora completely changed our acquisition economics. Our cost per signup dropped by 62% in the very first week."'
+      title: 'ShopSphere — E-Commerce UI Design',
+      category: 'E-Commerce Store & UI Design',
+      image: 'assets/shopsphere.png',
+      client: 'ShopSphere Retail Group',
+      timeline: '2 Weeks Delivery',
+      metrics: ['+185% Conversion Rate', '< 0.8s Page Load Speed', '99.9% Uptime'],
+      challenge: 'The client had a slow legacy storefront with poor mobile conversion and bloated scripts.',
+      solution: 'Designed and built a custom, lightning-fast static UI with optimized cart drawer, product filter, and instant checkout flow.',
+      stack: ['HTML5/CSS3', 'Vanilla JS', 'Figma', 'Vercel Edge CDN'],
+      testimonial: '"The speed and polish of our new storefront resulted in an immediate jump in online sales within 14 days of launch."'
     },
     2: {
-      title: 'Zenith Apparel — Modern D2C Fashion Store',
-      category: 'E-Commerce Store & Checkout',
-      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000&auto=format&fit=crop&q=80',
-      client: 'Zenith Fashion House',
-      timeline: '1.5 Weeks Delivery',
-      metrics: ['$120K+ Monthly Revenue', '1-Click Stripe & PayPal Checkout', '42% Higher Mobile Orders'],
-      challenge: 'Their existing Shopify theme was bloated with third-party plugins causing slow 4.5s load times and high cart abandonment.',
-      solution: 'Built a lightning-fast custom storefront with instant product search, optimized cart drawer, automatic coupon application, and automated invoice delivery.',
-      stack: ['React', 'Node.js Express', 'Stripe Payment Gateway', 'Cloudflare CDN'],
-      testimonial: '"The checkout speed is astonishing. Customers constantly compliment how effortless ordering has become."'
+      title: 'ExamMenu — AI Proctoring & Examination Platform',
+      category: 'EdTech Platform / SaaS',
+      image: 'assets/exammenu.png',
+      client: 'ExamMenu Viraj',
+      timeline: '2 Weeks Delivery',
+      metrics: ['50,000+ Students Examined', 'AI-Powered Proctoring', 'Real-time Analytics'],
+      challenge: 'Institutions across India needed a secure, low-latency examination platform with automated evaluation.',
+      solution: 'Built an enterprise online examination portal featuring automated AI proctoring, instant result generation, and deep institutional analytics.',
+      stack: ['EdTech / SaaS', 'AI Proctoring', 'Analytics Engine', 'Web Architecture'],
+      testimonial: '"ExamMenu transformed how institutions conduct online examinations with complete security and instant evaluation."'
     },
     3: {
-      title: 'Pulse Health Clinic — Medical Practice Portal',
-      category: 'Business Website & Local SEO',
-      image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1000&auto=format&fit=crop&q=80',
-      client: 'Pulse Medical Center',
-      timeline: '6 Days Delivery',
-      metrics: ['#1 Google Rank in Metro Area', '140+ Direct Monthly Appointments', 'Zero Hosting Glitches'],
-      challenge: 'Patients were having trouble finding doctor schedules and booking appointments on mobile, relying heavily on slow phone reception.',
-      solution: 'Designed a clean, calming UI with instant doctor calendar booking, automated email appointment reminders, and localized Google Maps Schema SEO.',
-      stack: ['HTML5/CSS3', 'Modern JS ES6+', 'Automated Booking Engine', 'Google Schema'],
-      testimonial: '"Patients love booking online and our search visibility has jumped significantly across our service region."'
-    },
-    4: {
-      title: 'FinPulse — Financial SaaS Dashboard',
-      category: 'Custom Web Application',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&auto=format&fit=crop&q=80',
-      client: 'FinPulse Tech',
-      timeline: '2 Weeks Delivery',
-      metrics: ['10,000+ Active Users', 'Sub-100ms API Latency', 'Multi-currency support'],
-      challenge: 'Needed an intuitive, lag-free analytics dashboard capable of rendering complex real-time cashflow charts and generating instant PDF invoices.',
-      solution: 'Built a modular TypeScript application with responsive chart visualizations, role-based authentication, and automated PDF exports.',
-      stack: ['React 18', 'TypeScript', 'Chart.js', 'Node.js', 'PostgreSQL'],
-      testimonial: '"Webnora is rare — a studio that understands both hardcore code architecture and sleek aesthetic design."'
-    },
-    5: {
-      title: 'Nova Living — Luxury Real Estate Showcase',
-      category: 'High-Ticket Business Website',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1000&auto=format&fit=crop&q=80',
-      client: 'Nova Realty Developers',
-      timeline: '7 Days Delivery',
-      metrics: ['$5.2M+ Project Bookings', 'Virtual Floor Plan Tours', 'Direct Lead Engine'],
-      challenge: 'Needed a premier digital brochure to showcase high-net-worth villas with interactive neighborhood insights and fast lead capture.',
-      solution: 'Crafted an editorial-grade real estate showcase with ultra-high-resolution asset optimization, virtual walk-throughs, and automated inquiry distribution.',
-      stack: ['Next.js', 'CSS Grid', 'Mapbox GL', 'Technical SEO'],
-      testimonial: '"High-net-worth buyers were thoroughly impressed with the presentation and speed of our project portal."'
-    },
-    6: {
-      title: 'Bistro Direct — Cloud Kitchen Direct Ordering',
-      category: 'Food Delivery & Online Store',
-      image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=80',
-      client: 'Bistro Hospitality',
-      timeline: '8 Days Delivery',
-      metrics: ['Saved 30% DoorDash/UberEats Fees', 'Instant Stripe Checkout', 'Direct Digital Menu'],
-      challenge: 'Excessive 30% commission fees on third-party food delivery aggregators were eating into daily restaurant profits.',
-      solution: 'Created a direct online ordering portal allowing customers to order in 3 clicks with instant card pay and automated digital kitchen tickets.',
-      stack: ['JavaScript', 'Stripe Payments', 'Order Notification System', 'Express Backend'],
-      testimonial: '"We saved over $9,500 in third-party delivery fees in our very first month alone."'
+      title: 'The Boho House — Luxury Cocktail Bar & Dining',
+      category: 'Hospitality & Brand Showcase',
+      image: 'assets/bohohouse.png',
+      client: 'The Boho House Pune',
+      timeline: '1 Week Delivery',
+      metrics: ['+210% Table Reservations', 'Luxury Brand Aesthetic', 'Mobile-First Layout'],
+      challenge: 'Needed a captivating, high-end web presence reflecting the atmospheric luxury dining experience of the cocktail bar.',
+      solution: 'Crafted a bespoke, rich visual website with instant table reservation CTAs, brand storytelling, and event showcases.',
+      stack: ['HTML5/CSS3', 'CSS Grid', 'Brand Design', 'Technical SEO'],
+      testimonial: '"High-net-worth guests are thoroughly impressed with the presentation and atmosphere of our site."'
     }
   };
 
