@@ -1,7 +1,7 @@
 /**
  * WEBNORA DIGITAL STUDIO - INTERACTIVE LOGIC
  * Brand: Webnora (Digital Web Agency & Studio)
- * Email: contacttovedant5@gmail.com
+ * Email: hellowebnora@gmail.com
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const encSubject = encodeURIComponent(subject);
     const encBody = encodeURIComponent(body);
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=contacttovedant5@gmail.com&su=${encSubject}&body=${encBody}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=hellowebnora@gmail.com&su=${encSubject}&body=${encBody}`;
 
     window.open(gmailUrl, '_blank');
     showToast('Opening Gmail with calculated scope pre-filled...', 'fa-envelope-open', 4000);
@@ -300,7 +300,7 @@ Pages: ${est.pages}
 Add-ons: ${est.addonsList.join(', ') || 'None'}
 Timeline: ${est.timelineName}
 Estimated Cost: ${priceStr}
-Contact Email: contacttovedant5@gmail.com`;
+Contact Email: hellowebnora@gmail.com`;
 
     navigator.clipboard.writeText(textToCopy).then(() => {
       showToast('Estimate summary copied to clipboard!', 'fa-copy');
@@ -468,7 +468,7 @@ Contact Email: contacttovedant5@gmail.com`;
       </div>
 
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="mailto:contacttovedant5@gmail.com?subject=Inquiry%20for%20Project%20like%20${encodeURIComponent(data.title)}&body=Hi%20Webnora%20Team,%0A%0AI%20saw%20your%20case%20study%20for%20${encodeURIComponent(data.title)}%20and%20I%20would%20like%20a%20similar%20website%20built%20for%20my%20business.%0A%0APlease%20let%20me%20know%20your%20availability%20and%20timeline." class="btn btn-emerald btn-block btn-lg" onclick="document.getElementById('case-study-modal').classList.remove('open'); document.body.style.overflow='';">
+        <a href="mailto:hellowebnora@gmail.com?subject=Inquiry%20for%20Project%20like%20${encodeURIComponent(data.title)}&body=Hi%20Webnora%20Team,%0A%0AI%20saw%20your%20case%20study%20for%20${encodeURIComponent(data.title)}%20and%20I%20would%20like%20a%20similar%20website%20built%20for%20my%20business.%0A%0APlease%20let%20me%20know%20your%20availability%20and%20timeline." class="btn btn-emerald btn-block btn-lg" onclick="document.getElementById('case-study-modal').classList.remove('open'); document.body.style.overflow='';">
           <i class="fas fa-paper-plane"></i> Request a Website Like This
         </a>
       </div>
@@ -577,7 +577,7 @@ Contact Email: contacttovedant5@gmail.com`;
     const { subject, body } = generateEmailDraft(data);
     const encSubject = encodeURIComponent(subject);
     const encBody = encodeURIComponent(body);
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=contacttovedant5@gmail.com&su=${encSubject}&body=${encBody}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=hellowebnora@gmail.com&su=${encSubject}&body=${encBody}`;
 
     // Directly open Gmail in a new tab
     window.open(gmailUrl, '_blank');
@@ -592,7 +592,7 @@ Contact Email: contacttovedant5@gmail.com`;
         <div style="width: 100%;">
           <strong style="font-size: 1rem; color: var(--text-primary);">Opening Gmail with Your Query...</strong>
           <p style="margin: 0.4rem 0 0.8rem 0; font-size: 0.88rem; color: var(--text-secondary);">
-            Your query has been formatted and addressed to <strong>contacttovedant5@gmail.com</strong>.
+            Your query has been formatted and addressed to <strong>hellowebnora@gmail.com</strong>.
           </p>
           <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
             <a href="${gmailUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-emerald btn-sm" style="text-decoration:none;">
@@ -691,7 +691,7 @@ Contact Email: contacttovedant5@gmail.com`;
       e.preventDefault();
       
       const mailtoUrl = link.getAttribute('href');
-      const email = 'contacttovedant5@gmail.com';
+      const email = 'hellowebnora@gmail.com';
       
       let subject = '';
       let body = '';
