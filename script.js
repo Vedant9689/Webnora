@@ -374,16 +374,16 @@ Contact Email: hellowebnora@gmail.com`;
       testimonial: '"The speed and polish of our new storefront resulted in an immediate jump in online sales within 14 days of launch."'
     },
     2: {
-      title: 'ExamMenu — AI Proctoring & Examination Platform',
-      category: 'EdTech Platform / SaaS',
-      image: 'assets/exammenu.png',
-      client: 'ExamMenu Viraj',
+      title: 'SevenMentor — IT Training & Placement Institute',
+      category: 'EdTech & Training Platform',
+      image: 'assets/sevenmentor.png',
+      client: 'SevenMentor Training Institute',
       timeline: '2 Weeks Delivery',
-      metrics: ['50,000+ Students Examined', 'AI-Powered Proctoring', 'Real-time Analytics'],
-      challenge: 'Institutions across India needed a secure, low-latency examination platform with automated evaluation.',
-      solution: 'Built an enterprise online examination portal featuring automated AI proctoring, instant result generation, and deep institutional analytics.',
-      stack: ['EdTech / SaaS', 'AI Proctoring', 'Analytics Engine', 'Web Architecture'],
-      testimonial: '"ExamMenu transformed how institutions conduct online examinations with complete security and instant evaluation."'
+      metrics: ['50,000+ Trained Students', '500+ Hiring Partners', 'Job-Oriented Course Portal'],
+      challenge: 'Needed a high-scale, modern educational web platform showcasing IT courses, corporate training modules, and student placement tracks.',
+      solution: 'Engineered an interactive EdTech portal with course catalog navigation, instant callback requests, and corporate recruitment channels.',
+      stack: ['EdTech Platform', 'Training Portal', 'Placement Engine', 'Web Architecture'],
+      testimonial: '"SevenMentor’s platform seamlessly connects thousands of students with top IT hiring partners across India."'
     },
     3: {
       title: 'The Boho House — Luxury Cocktail Bar & Dining',
