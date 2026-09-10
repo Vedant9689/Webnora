@@ -53,6 +53,7 @@
   --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  --font-serif: 'Instrument Serif', Georgia, serif;
 
   /* Layout & Spacing */
   --container-max: 1200px;
@@ -811,6 +812,16 @@ ul {
   margin-bottom: 1.5rem;
   color: #ffffff;
   text-shadow: 0 2px 16px rgba(0,0,0,0.45);
+}
+
+.editorial-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  display: inline-block;
+  padding-right: 0.12em;
 }
 
 .hero-subtitle {
