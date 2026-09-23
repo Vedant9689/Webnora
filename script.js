@@ -5,19 +5,22 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Global App State (US Market Standard Pricing)
+  // Global App State (Dual Currency INR + USD Beginner Rates)
   const state = {
-    currency: 'USD', // USD
+    currency: 'INR', // 'INR' or 'USD'
     estimator: {
       type: 'landing',
       typeName: 'Landing Page',
-      basePriceUSD: 399,
+      basePriceINR: 2999,
+      basePriceUSD: 39,
       pages: 3,
-      addonsTotalUSD: 99, // speed_opt checked by default
+      addonsTotalINR: 499,
+      addonsTotalUSD: 6, // speed_opt checked by default
       addonsList: ['Hyper Performance & Speed'],
       multiplier: 1.0,
       timelineName: 'Standard (1 - 2 weeks)',
-      finalPriceUSD: 498
+      finalPriceINR: 3498,
+      finalPriceUSD: 45
     }
   };
 
@@ -100,37 +103,62 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
-     4. CURRENCY DISPLAY (USD DEFAULT FOR US CLIENTS)
+     4. CURRENCY DISPLAY (DUAL CURRENCY INR ₹ & USD $)
      ========================================================================== */
   const currencyBtns = document.querySelectorAll('.currency-btn');
   const priceValues = document.querySelectorAll('.price-val');
   const currencySymbols = document.querySelectorAll('.currency-symbol');
 
+  function updateCurrencyUI(selectedCurrency) {
+    state.currency = selectedCurrency;
+    
+    currencyBtns.forEach(b => {
+      if (b.getAttribute('data-currency') === selectedCurrency) {
+        b.classList.add('active');
+      } else {
+        b.classList.remove('active');
+      }
+    });
+
+    priceValues.forEach((el, index) => {
+      const inr = el.getAttribute('data-inr');
+      const usd = el.getAttribute('data-usd');
+      const altTag = document.getElementById(`alt-price-${index + 1}`);
+
+      if (selectedCurrency === 'INR') {
+        el.textContent = inr || el.textContent;
+        const parent = el.closest('.package-price');
+        if (parent) {
+          const sym = parent.querySelector('.currency-symbol');
+          if (sym) sym.textContent = '₹';
+        }
+        if (altTag) altTag.textContent = `($${usd} USD)`;
+      } else {
+        el.textContent = usd || el.textContent;
+        const parent = el.closest('.package-price');
+        if (parent) {
+          const sym = parent.querySelector('.currency-symbol');
+          if (sym) sym.textContent = '$';
+        }
+        if (altTag) altTag.textContent = `(₹${inr} INR)`;
+      }
+    });
+
+    updateEstimator();
+    showToast(`Switched currency to ${selectedCurrency === 'INR' ? 'INR (₹)' : 'USD ($)'}`, 'fa-coins', 2000);
+  }
+
   if (currencyBtns.length > 0) {
     currencyBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        currencyBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const selectedCurrency = btn.getAttribute('data-currency') || 'USD';
-        state.currency = selectedCurrency;
-
-        priceValues.forEach(el => {
-          const usd = el.getAttribute('data-usd');
-          el.textContent = usd || el.textContent;
-        });
-
-        currencySymbols.forEach(el => {
-          el.textContent = '$';
-        });
-
-        updateEstimator();
+        const selectedCurrency = btn.getAttribute('data-currency') || 'INR';
+        updateCurrencyUI(selectedCurrency);
       });
     });
   }
 
   /* ==========================================================================
-     5. PROJECT COST ESTIMATOR (US MARKET STANDARDS)
+     5. PROJECT COST ESTIMATOR (BEGINNER MARKET RATES - INR & USD)
      ========================================================================== */
   const projectTypeRadios = document.querySelectorAll('input[name="project_type"]');
   const pageSlider = document.getElementById('page-slider');
@@ -180,7 +208,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedType = document.querySelector('input[name="project_type"]:checked');
     if (selectedType) {
       state.estimator.type = selectedType.value;
-      state.estimator.basePriceUSD = parseFloat(selectedType.getAttribute('data-base-usd')) || 399;
+      state.estimator.basePriceINR = parseFloat(selectedType.getAttribute('data-base-inr')) || 2999;
+      state.estimator.basePriceUSD = parseFloat(selectedType.getAttribute('data-base-usd')) || 39;
       
       const titleSpan = selectedType.closest('.estimator-radio-card')?.querySelector('.option-title');
       state.estimator.typeName = titleSpan ? titleSpan.textContent.trim() : 'Landing Page';
@@ -193,22 +222,26 @@ document.addEventListener('DOMContentLoaded', () => {
       pageCountVal.textContent = pageVal === 1 ? '1 Single Page' : `${pageVal} Custom Pages`;
     }
 
-    // Extra page cost: $50 / page for >1 page on landing or >3 on business
+    // Extra page cost: ₹350 ($5) / page for >1 page on landing or >3 on business
     let extraPages = Math.max(0, pageVal - (state.estimator.type === 'landing' ? 1 : 3));
-    let extraPageCostUSD = extraPages * 50;
+    let extraPageCostINR = extraPages * 350;
+    let extraPageCostUSD = extraPages * 5;
 
     // 3. Addons
+    let addonsTotalINR = 0;
     let addonsTotalUSD = 0;
     const activeAddonNames = [];
 
     addonCheckboxes.forEach(cb => {
       if (cb.checked) {
+        addonsTotalINR += parseFloat(cb.getAttribute('data-inr')) || 0;
         addonsTotalUSD += parseFloat(cb.getAttribute('data-usd')) || 0;
         const nameEl = cb.closest('.addon-checkbox-card')?.querySelector('.addon-name');
         if (nameEl) activeAddonNames.push(nameEl.textContent.trim());
       }
     });
 
+    state.estimator.addonsTotalINR = addonsTotalINR;
     state.estimator.addonsTotalUSD = addonsTotalUSD;
     state.estimator.addonsList = activeAddonNames;
 
@@ -218,19 +251,27 @@ document.addEventListener('DOMContentLoaded', () => {
     state.estimator.multiplier = multiplier;
     state.estimator.timelineName = multiplier > 1.0 ? '⚡ Express Priority (3-5 Days)' : 'Standard (1-2 Weeks)';
 
-    // Compute Total in USD
+    // Compute Totals
+    const subtotalINR = state.estimator.basePriceINR + extraPageCostINR + addonsTotalINR;
     const subtotalUSD = state.estimator.basePriceUSD + extraPageCostUSD + addonsTotalUSD;
+
+    const finalINR = Math.round(subtotalINR * multiplier);
     const finalUSD = Math.round(subtotalUSD * multiplier);
 
+    state.estimator.finalPriceINR = finalINR;
     state.estimator.finalPriceUSD = finalUSD;
 
     // Update UI Elements
-    if (summaryCurrencyUnit) {
-      summaryCurrencyUnit.textContent = '$';
-    }
+    const altCalculatedDisplay = document.getElementById('alt-calculated-price');
 
-    if (calculatedPriceDisplay) {
-      calculatedPriceDisplay.textContent = finalUSD.toLocaleString('en-US');
+    if (state.currency === 'INR') {
+      if (summaryCurrencyUnit) summaryCurrencyUnit.textContent = '₹';
+      if (calculatedPriceDisplay) calculatedPriceDisplay.textContent = finalINR.toLocaleString('en-IN');
+      if (altCalculatedDisplay) altCalculatedDisplay.textContent = `($${finalUSD.toLocaleString('en-US')} USD)`;
+    } else {
+      if (summaryCurrencyUnit) summaryCurrencyUnit.textContent = '$';
+      if (calculatedPriceDisplay) calculatedPriceDisplay.textContent = finalUSD.toLocaleString('en-US');
+      if (altCalculatedDisplay) altCalculatedDisplay.textContent = `(₹${finalINR.toLocaleString('en-IN')} INR)`;
     }
 
     if (summaryBaseType) summaryBaseType.textContent = state.estimator.typeName;
@@ -299,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Send Estimator Scope via Email
   sendEstimateEmailBtn?.addEventListener('click', () => {
     const est = state.estimator;
-    const priceStr = `$${est.finalPriceUSD.toLocaleString('en-US')}`;
+    const priceStr = `₹${est.finalPriceINR.toLocaleString('en-IN')} / $${est.finalPriceUSD.toLocaleString('en-US')} USD`;
     const addonsStr = est.addonsList.length > 0 ? est.addonsList.join(', ') : 'Standard Features';
 
     const subject = `Webnora Project Scope - ${est.typeName} (${priceStr})`;
@@ -311,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Copy Estimate Summary to Clipboard
   copyEstimateBtn?.addEventListener('click', () => {
     const est = state.estimator;
-    const priceStr = `$${est.finalPriceUSD.toLocaleString('en-US')}`;
+    const priceStr = `₹${est.finalPriceINR.toLocaleString('en-IN')} / $${est.finalPriceUSD.toLocaleString('en-US')} USD`;
     const textToCopy = `Webnora Project Scope Estimate:
 Type: ${est.typeName}
 Pages: ${est.pages}

@@ -410,16 +410,25 @@
     <section class="section packages-section" id="packages">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-subtitle">Transparent Pricing</span>
-          <h2 class="section-title">Clear, Value-Driven Website Packages</h2>
+          <span class="section-subtitle">Special Beginner Pricing</span>
+          <h2 class="section-title">Cheaper Than Market Rates — Pure Quality & Speed</h2>
           <p class="section-desc">
-            No hidden fees or surprises. Choose a proven package tailored to your stage of business, or contact me for a bespoke custom scope.
+            As a rising web design & engineering studio, we offer special introductory rates for Indian and global clients without compromising performance, mobile responsiveness, or design quality.
           </p>
 
-          <!-- US Client Badge -->
+          <!-- Interactive Dual Currency Toggle (INR + USD) -->
           <div class="currency-toggle-wrapper">
+            <div class="currency-toggle-bar">
+              <span class="currency-toggle-label"><i class="fas fa-coins text-emerald"></i> Select Currency:</span>
+              <button class="currency-btn active" data-currency="INR">
+                <span>🇮🇳 INR (₹)</span> <span class="client-tag">India</span>
+              </button>
+              <button class="currency-btn" data-currency="USD">
+                <span>🌐 USD ($)</span> <span class="client-tag">Global</span>
+              </button>
+            </div>
             <div class="us-pricing-badge">
-              <i class="fas fa-dollar-sign text-emerald"></i> <span>Transparent USD Pricing for US & Global Clients</span>
+              <i class="fas fa-tag text-emerald"></i> <span>Introductory Market-Entry Rates • Dual Currency INR (₹) & USD ($)</span>
             </div>
           </div>
         </div>
@@ -428,12 +437,13 @@
           <!-- Package 1: Starter Launch -->
           <div class="package-card glass-card">
             <div class="package-header">
-              <div class="package-badge">Starter</div>
+              <div class="package-badge">Starter Special</div>
               <h3 class="package-name">Launch Landing Page</h3>
-              <p class="package-for">Best for product launches, ad campaigns, and US service professionals.</p>
+              <p class="package-for">Best for product launches, ad campaigns, portfolios, and small services.</p>
               <div class="package-price">
-                <span class="currency-symbol">$</span>
-                <span class="price-val" data-usd="399">399</span>
+                <span class="currency-symbol">₹</span>
+                <span class="price-val" data-inr="2,999" data-usd="39">2,999</span>
+                <span class="alt-price-tag" id="alt-price-1">($39 USD)</span>
                 <span class="price-period">one-time</span>
               </div>
             </div>
@@ -446,7 +456,7 @@
                 <li><i class="fas fa-check text-emerald"></i> 1 High-Converting Single Page</li>
                 <li><i class="fas fa-check text-emerald"></i> 100% Mobile & Tablet Responsive</li>
                 <li><i class="fas fa-check text-emerald"></i> Lead Capture & Contact Form Integration</li>
-                <li><i class="fas fa-check text-emerald"></i> Instant Email Inquiries to Webnora Studio</li>
+                <li><i class="fas fa-check text-emerald"></i> Direct Email Inquiries to Webnora Studio</li>
                 <li><i class="fas fa-check text-emerald"></i> Basic On-Page SEO & Meta Tags</li>
                 <li><i class="fas fa-check text-emerald"></i> Superfast Loading (&lt; 1 sec)</li>
                 <li><i class="fas fa-check text-emerald"></i> Free Domain/Hosting Setup Help</li>
@@ -455,8 +465,8 @@
             </div>
 
             <div class="package-footer">
-              <a href="mailto:hellowebnora@gmail.com?subject=Booking%20Inquiry%20for%20Launch%20Landing%20Page%20($399)&body=Hi%20Webnora%20Team,%0A%0AI%20would%20like%20to%20book%20the%20Launch%20Landing%20Page%20package%20($399).%0A%0APlease%20let%20me%20know%20the%20kickoff%20steps." class="btn btn-outline btn-block package-cta" data-package="Launch Landing Page">
-                <i class="fas fa-paper-plane"></i> Book Starter ($399)
+              <a href="mailto:hellowebnora@gmail.com?subject=Booking%20Inquiry%20for%20Launch%20Landing%20Page%20(₹2,999%20/%20$39)&body=Hi%20Webnora%20Team,%0A%0AI%20would%20like%20to%20book%20the%20Launch%20Landing%20Page%20package%20(₹2,999%20/%20$39).%0A%0APlease%20let%20me%20know%20the%20kickoff%20steps." class="btn btn-outline btn-block package-cta" data-package="Launch Landing Page">
+                <i class="fas fa-paper-plane"></i> Book Starter (₹2,999 / $39)
               </a>
             </div>
           </div>
@@ -465,12 +475,13 @@
           <div class="package-card glass-card popular-package">
             <div class="popular-ribbon">⭐ Most Popular (Best Value)</div>
             <div class="package-header">
-              <div class="package-badge popular-badge">Business Growth</div>
+              <div class="package-badge popular-badge">Business Special</div>
               <h3 class="package-name">Complete Business Website</h3>
-              <p class="package-for">Best for small businesses, startups, agencies, and US service providers wanting a modern multi-page presence.</p>
+              <p class="package-for">Best for small businesses, agencies, clinics, and service providers needing a full multi-page site.</p>
               <div class="package-price">
-                <span class="currency-symbol">$</span>
-                <span class="price-val" data-usd="999">999</span>
+                <span class="currency-symbol">₹</span>
+                <span class="price-val" data-inr="6,999" data-usd="89">6,999</span>
+                <span class="alt-price-tag" id="alt-price-2">($89 USD)</span>
                 <span class="price-period">one-time</span>
               </div>
             </div>
@@ -481,10 +492,10 @@
               </div>
               <ul class="package-list">
                 <li><i class="fas fa-check text-emerald"></i> Up to <strong>5 - 7 Custom Designed Pages</strong></li>
-                <li><i class="fas fa-check text-emerald"></i> Bespoke Modern UI/UX (Monochrome Black & White)</li>
-                <li><i class="fas fa-check text-emerald"></i> Comprehensive Technical On-Page SEO</li>
-                <li><i class="fas fa-check text-emerald"></i> Easy CMS to edit content/blogs</li>
-                <li><i class="fas fa-check text-emerald"></i> Interactive Lead Forms & Quotation Tool</li>
+                <li><i class="fas fa-check text-emerald"></i> Bespoke Modern UI/UX Architecture</li>
+                <li><i class="fas fa-check text-emerald"></i> Comprehensive On-Page Technical SEO</li>
+                <li><i class="fas fa-check text-emerald"></i> Easy Content Management / Blog Ready</li>
+                <li><i class="fas fa-check text-emerald"></i> Interactive Lead Forms & Cost Estimator</li>
                 <li><i class="fas fa-check text-emerald"></i> Google Analytics & Search Console Setup</li>
                 <li><i class="fas fa-check text-emerald"></i> 95+ PageSpeed Guarantee</li>
                 <li><i class="fas fa-check text-emerald"></i> <strong>30 Days Free Dedicated Support</strong></li>
@@ -492,8 +503,8 @@
             </div>
 
             <div class="package-footer">
-              <a href="mailto:hellowebnora@gmail.com?subject=Booking%20Inquiry%20for%20Complete%20Business%20Website%20($999)&body=Hi%20Webnora%20Team,%0A%0AI%20would%20like%20to%20book%20the%20Complete%20Business%20Website%20package%20($999).%0A%0APlease%20let%20me%20know%20the%20kickoff%20steps." class="btn btn-emerald btn-block package-cta" data-package="Complete Business Website">
-                <i class="fas fa-paper-plane"></i> Book Business ($999)
+              <a href="mailto:hellowebnora@gmail.com?subject=Booking%20Inquiry%20for%20Complete%20Business%20Website%20(₹6,999%20/%20$89)&body=Hi%20Webnora%20Team,%0A%0AI%20would%20like%20to%20book%20the%20Complete%20Business%20Website%20package%20(₹6,999%20/%20$89).%0A%0APlease%20let%20me%20know%20the%20kickoff%20steps." class="btn btn-emerald btn-block package-cta" data-package="Complete Business Website">
+                <i class="fas fa-paper-plane"></i> Book Business (₹6,999 / $89)
               </a>
             </div>
           </div>
@@ -501,12 +512,13 @@
           <!-- Package 3: Custom E-Commerce & Full-Stack -->
           <div class="package-card glass-card">
             <div class="package-header">
-              <div class="package-badge">Online Store</div>
+              <div class="package-badge">Store Special</div>
               <h3 class="package-name">E-Commerce & Online Store</h3>
-              <p class="package-for">Best for selling products online with seamless Stripe / PayPal payments and order alerts.</p>
+              <p class="package-for">Best for selling products online with Razorpay, Stripe, UPI, or Credit Cards.</p>
               <div class="package-price">
-                <span class="currency-symbol">$</span>
-                <span class="price-val" data-usd="1799">1,799</span>
+                <span class="currency-symbol">₹</span>
+                <span class="price-val" data-inr="12,999" data-usd="159">12,999</span>
+                <span class="alt-price-tag" id="alt-price-3">($159 USD)</span>
                 <span class="price-period">starting price</span>
               </div>
             </div>
@@ -517,18 +529,18 @@
               </div>
               <ul class="package-list">
                 <li><i class="fas fa-check text-emerald"></i> Full Online Store or Dynamic Web App</li>
-                <li><i class="fas fa-check text-emerald"></i> Stripe / PayPal / Credit Card Gateway Integration</li>
-                <li><i class="fas fa-check text-emerald"></i> Product Management & Inventory Dashboard</li>
-                <li><i class="fas fa-check text-emerald"></i> User Accounts & Automated Invoices</li>
+                <li><i class="fas fa-check text-emerald"></i> Razorpay / Stripe / UPI / Credit Card Integration</li>
+                <li><i class="fas fa-check text-emerald"></i> Product Catalog & Order Notifications</li>
+                <li><i class="fas fa-check text-emerald"></i> User Accounts & Automated WhatsApp/Email Alerts</li>
                 <li><i class="fas fa-check text-emerald"></i> High Security & SSL Configuration</li>
-                <li><i class="fas fa-check text-emerald"></i> Custom Dynamic Filters & Search</li>
+                <li><i class="fas fa-check text-emerald"></i> Fast Mobile Checkout Flow</li>
                 <li><i class="fas fa-check text-emerald"></i> <strong>45 Days Free Priority Support</strong></li>
               </ul>
             </div>
 
             <div class="package-footer">
-              <a href="mailto:hellowebnora@gmail.com?subject=Booking%20Inquiry%20for%20E-Commerce%20Store%20($1,799)&body=Hi%20Webnora%20Team,%0A%0AI%20would%20like%20to%20book%20the%20E-Commerce%20Store%20package%20($1,799).%0A%0APlease%20let%20me%20know%20the%20kickoff%20steps." class="btn btn-outline btn-block package-cta" data-package="E-Commerce & Online Store">
-                <i class="fas fa-paper-plane"></i> Book Store ($1,799)
+              <a href="mailto:hellowebnora@gmail.com?subject=Booking%20Inquiry%20for%20E-Commerce%20Store%20(₹12,999%20/%20$159)&body=Hi%20Webnora%20Team,%0A%0AI%20would%20like%20to%20book%20the%20E-Commerce%20Store%20package%20(₹12,999%20/%20$159).%0A%0APlease%20let%20me%20know%20the%20kickoff%20steps." class="btn btn-outline btn-block package-cta" data-package="E-Commerce & Online Store">
+                <i class="fas fa-paper-plane"></i> Book Store (₹12,999 / $159)
               </a>
             </div>
           </div>
@@ -536,12 +548,13 @@
           <!-- Package 4: Maintenance Retainer -->
           <div class="package-card glass-card retainer-card">
             <div class="package-header">
-              <div class="package-badge">Monthly Care</div>
+              <div class="package-badge">Monthly Special</div>
               <h3 class="package-name">Website Care & Growth</h3>
-              <p class="package-for">Keep your website fast, secure, up-to-date, and error-free every month.</p>
+              <p class="package-for">Keep your website fast, secure, updated, and error-free every month.</p>
               <div class="package-price">
-                <span class="currency-symbol">$</span>
-                <span class="price-val" data-usd="149">149</span>
+                <span class="currency-symbol">₹</span>
+                <span class="price-val" data-inr="999" data-usd="15">999</span>
+                <span class="alt-price-tag" id="alt-price-4">($15/mo)</span>
                 <span class="price-period">/ month</span>
               </div>
             </div>
@@ -552,16 +565,16 @@
               </div>
               <ul class="package-list">
                 <li><i class="fas fa-check text-emerald"></i> Unlimited Content & Banner Updates</li>
-                <li><i class="fas fa-check text-emerald"></i> Weekly Backups & Security Scans</li>
-                <li><i class="fas fa-check text-emerald"></i> Speed & Core Web Vitals Audits</li>
+                <li><i class="fas fa-check text-emerald"></i> Regular Backups & Security Audits</li>
+                <li><i class="fas fa-check text-emerald"></i> Speed & Performance Monitoring</li>
                 <li><i class="fas fa-check text-emerald"></i> Priority Email Support (&lt; 2hr response)</li>
-                <li><i class="fas fa-check text-emerald"></i> Continuous SEO Monitoring</li>
+                <li><i class="fas fa-check text-emerald"></i> Ongoing Technical SEO Tweaks</li>
               </ul>
             </div>
 
             <div class="package-footer">
-              <a href="mailto:hellowebnora@gmail.com?subject=Inquiry%20for%20Website%20Care%20Retainer%20($149/mo)&body=Hi%20Webnora%20Team,%0A%0AI%20would%20like%20to%20subscribe%20to%20the%20Monthly%20Website%20Care%20Retainer%20($149/mo).%0A%0APlease%20let%20me%20know%20the%20kickoff%20steps." class="btn btn-outline btn-block package-cta" data-package="Website Care Retainer">
-                <i class="fas fa-sync-alt"></i> Get Monthly Care ($149/mo)
+              <a href="mailto:hellowebnora@gmail.com?subject=Inquiry%20for%20Website%20Care%20Retainer%20(₹999%20/%20$15/mo)&body=Hi%20Webnora%20Team,%0A%0AI%20would%20like%20to%20subscribe%20to%20the%20Monthly%20Website%20Care%20Retainer%20(₹999%20/%20$15/mo).%0A%0APlease%20let%20me%20know%20the%20kickoff%20steps." class="btn btn-outline btn-block package-cta" data-package="Website Care Retainer">
+                <i class="fas fa-sync-alt"></i> Get Care (₹999 / $15/mo)
               </a>
             </div>
           </div>
@@ -570,8 +583,8 @@
         <!-- Custom Scope Note -->
         <div class="custom-scope-banner glass-card">
           <div class="custom-banner-text">
-            <h4>Need a Custom Feature or Specific Tech Stack?</h4>
-            <p>I build bespoke architectures (HTML5/CSS3, Custom APIs, SaaS MVPs). Let’s customize a plan specifically for your requirements.</p>
+            <h4>Need a Custom Feature or Unique Requirements?</h4>
+            <p>We build affordable custom web solutions tailored to your exact budget. Contact us for a free quote in INR (₹) or USD ($).</p>
           </div>
           <a href="#contact" class="btn btn-emerald package-cta" data-package="Custom Affordable Scope">
             <i class="fas fa-paper-plane"></i> Discuss Custom Scope
@@ -585,9 +598,9 @@
       <div class="container">
         <div class="section-header text-center">
           <span class="section-subtitle">Instant Estimate</span>
-          <h2 class="section-title">Calculate Your Project Cost & Scope</h2>
+          <h2 class="section-title">Calculate Your Custom Project Cost</h2>
           <p class="section-desc">
-            Select your project specifications below to get a transparent ballpark quote, then easily send the scope via email for a proposal.
+            Select your requirements to see an instant transparent ballpark quote in INR (₹) and USD ($).
           </p>
         </div>
 
@@ -601,31 +614,31 @@
                 <label class="group-label"><i class="fas fa-layer-group"></i> 1. Select Project Type</label>
                 <div class="option-grid option-grid-2">
                   <label class="estimator-radio-card active">
-                    <input type="radio" name="project_type" value="landing" data-base-usd="399" checked>
+                    <input type="radio" name="project_type" value="landing" data-base-inr="2999" data-base-usd="39" checked>
                     <div class="radio-content">
                       <span class="option-title">Landing Page</span>
-                      <span class="option-sub">High conversion 1-pager</span>
+                      <span class="option-sub">High conversion 1-pager • ₹2,999 ($39)</span>
                     </div>
                   </label>
                   <label class="estimator-radio-card">
-                    <input type="radio" name="project_type" value="business" data-base-usd="999">
+                    <input type="radio" name="project_type" value="business" data-base-inr="6999" data-base-usd="89">
                     <div class="radio-content">
                       <span class="option-title">Business Website</span>
-                      <span class="option-sub">Multi-page business site</span>
+                      <span class="option-sub">Multi-page business site • ₹6,999 ($89)</span>
                     </div>
                   </label>
                   <label class="estimator-radio-card">
-                    <input type="radio" name="project_type" value="ecommerce" data-base-usd="1799">
+                    <input type="radio" name="project_type" value="ecommerce" data-base-inr="12999" data-base-usd="159">
                     <div class="radio-content">
                       <span class="option-title">E-Commerce Store</span>
-                      <span class="option-sub">Products, cart & Stripe/PayPal</span>
+                      <span class="option-sub">Products, cart & payments • ₹12,999 ($159)</span>
                     </div>
                   </label>
                   <label class="estimator-radio-card">
-                    <input type="radio" name="project_type" value="custom_app" data-base-usd="2499">
+                    <input type="radio" name="project_type" value="custom_app" data-base-inr="18999" data-base-usd="239">
                     <div class="radio-content">
                       <span class="option-title">Custom Web App</span>
-                      <span class="option-sub">SaaS, portals & APIs</span>
+                      <span class="option-sub">Dashboard & custom logic • ₹18,999 ($239)</span>
                     </div>
                   </label>
                 </div>
@@ -651,53 +664,53 @@
                 <label class="group-label"><i class="fas fa-puzzle-piece"></i> 3. Additional Features & Capabilities</label>
                 <div class="addons-grid">
                   <label class="addon-checkbox-card">
-                    <input type="checkbox" name="addon" value="seo_pro" data-usd="150">
+                    <input type="checkbox" name="addon" value="seo_pro" data-inr="899" data-usd="12">
                     <div class="checkbox-custom"></div>
                     <div class="addon-info">
                       <span class="addon-name">Advanced Technical SEO</span>
                       <span class="addon-desc">Schema markup, sitemaps, Google indexing</span>
                     </div>
-                    <span class="addon-badge">+$150</span>
+                    <span class="addon-badge">+₹899 ($12)</span>
                   </label>
 
                   <label class="addon-checkbox-card">
-                    <input type="checkbox" name="addon" value="payment_gate" data-usd="200">
+                    <input type="checkbox" name="addon" value="payment_gate" data-inr="1299" data-usd="16">
                     <div class="checkbox-custom"></div>
                     <div class="addon-info">
                       <span class="addon-name">Payment Gateway Integration</span>
-                      <span class="addon-desc">Stripe / PayPal / Credit Cards / Apple Pay</span>
+                      <span class="addon-desc">Razorpay / Stripe / UPI / Cards / PayPal</span>
                     </div>
-                    <span class="addon-badge">+$200</span>
+                    <span class="addon-badge">+₹1,299 ($16)</span>
                   </label>
 
                   <label class="addon-checkbox-card">
-                    <input type="checkbox" name="addon" value="cms_admin" data-usd="250">
+                    <input type="checkbox" name="addon" value="cms_admin" data-inr="1599" data-usd="20">
                     <div class="checkbox-custom"></div>
                     <div class="addon-info">
                       <span class="addon-name">Admin CMS / Blog Manager</span>
                       <span class="addon-desc">Easily write blogs and edit content</span>
                     </div>
-                    <span class="addon-badge">+$250</span>
+                    <span class="addon-badge">+₹1,599 ($20)</span>
                   </label>
 
                   <label class="addon-checkbox-card">
-                    <input type="checkbox" name="addon" value="speed_opt" data-usd="99" checked>
+                    <input type="checkbox" name="addon" value="speed_opt" data-inr="499" data-usd="6" checked>
                     <div class="checkbox-custom"></div>
                     <div class="addon-info">
                       <span class="addon-name">Hyper Performance & Speed</span>
                       <span class="addon-desc">Sub-second load times & 95+ PageSpeed</span>
                     </div>
-                    <span class="addon-badge">+$99</span>
+                    <span class="addon-badge">+₹499 ($6)</span>
                   </label>
 
                   <label class="addon-checkbox-card">
-                    <input type="checkbox" name="addon" value="animations" data-usd="150">
+                    <input type="checkbox" name="addon" value="animations" data-inr="899" data-usd="12">
                     <div class="checkbox-custom"></div>
                     <div class="addon-info">
                       <span class="addon-name">Bespoke Micro-Animations</span>
                       <span class="addon-desc">Interactive smooth scroll & micro-effects</span>
                     </div>
-                    <span class="addon-badge">+$150</span>
+                    <span class="addon-badge">+₹899 ($12)</span>
                   </label>
                 </div>
               </div>
@@ -731,10 +744,11 @@
                 <div class="summary-header">
                   <span class="summary-tag">Live Estimated Quote</span>
                   <div class="summary-total-price">
-                    <span class="currency-unit">$</span>
-                    <span id="calculated-price">498</span>
+                    <span class="currency-unit">₹</span>
+                    <span id="calculated-price">3,498</span>
+                    <span class="alt-calculated-price" id="alt-calculated-price">($45 USD)</span>
                   </div>
-                  <span class="price-hint">Transparent estimated ballpark quote</span>
+                  <span class="price-hint">Transparent beginner-friendly ballpark quote</span>
                 </div>
 
                 <div class="summary-breakdown">
